@@ -25,26 +25,27 @@
 **Q3b:** What are the usernames of each group member on that platform?  
 **Q3c:** What is your group’s expected response time to messages?  
 
-**Example:**  
-*We will use Discord for communication*  
+*We will being using Discord for communication*
 
-*Usernames:*  
-*Justin - ghostmechanic*  
-*Claudia - ninth.py*  
-*Mauricio - itsperi*  
-*Our expected response time will be within 12 hours.*  
+*Usernames:*
+*Lora - appleroox*
+*Rishi - rnov2001*
+*Hibatul - hm05633*
+
+*Our expected response time will be within 24 hours.*
 
 ---
 
 # Norms  
 
-**Q4a:** How will your group handle situations when there is conflict in your group?  
+**Q4a:** How will your group handle situations when there is conflict in your group? 
+
+If there is conflict in the group, we can create a poll in the channel to resolve any disputes. We will, however, make sure everyone has a chance to explain their side so that every point of view is equally considered.
+
+
 **Q4b:** How will your group handle situations when a member is not contributing enough?  
 
-**Example:**  
-*If there is a disagreement on direction, we will resolve it with a unanimous vote.*  
-*If team members do not pull their weight, the team will politely remind them of their duties.*  
-*If they continue to not pull their weight, then they will get another warning and a chance to start being more productive.*  
+If a member is not contributing enough, we will check in on them to see what the issue is, and offer support to a reasonable extent. If the problem continues, we will contact the instructor. 
 
 ---
 
@@ -53,13 +54,14 @@
 **Q5:** How will your group divide your role in the Group Project?  
 
 **Example:**  
-*Mauricio - Backend, Justin - Project Lead, Claudia - Frontend.*  
-
+*Lora - Project Lead, Rishi - Backend, Hibatul - Frontend.*
 ---
 
 # Tech Stacks
 
 **Q6:** Which tech stacks will your group use? (Django + React or Flask + React)
+
+We will be using Django + React tech stack
 
 ---
 # Full Stack Group Project Track  
