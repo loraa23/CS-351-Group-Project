@@ -27,10 +27,13 @@
 
 *We will being using Discord for communication*
 
-*Usernames:*
-*Lora - appleroox*
-*Rishi - rnov2001*
-*Hibatul - hm05633*
+Usernames:
+
+Lora - appleroox
+
+Rishi - rnov2001
+
+Hibatul - hm05633
 
 *Our expected response time will be within 24 hours.*
 
@@ -52,9 +55,10 @@ If a member is not contributing enough, we will check in on them to see what the
 # Roles  
 
 **Q5:** How will your group divide your role in the Group Project?  
-
-**Example:**  
-*Lora - Project Lead, Rishi - Backend, Hibatul - Frontend.*
+ 
+Lora - Project Lead
+Rishi - Backend
+Hibatul - Frontend
 ---
 
 # Tech Stacks
