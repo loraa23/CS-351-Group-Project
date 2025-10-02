@@ -87,6 +87,7 @@ We will be using Django + React tech stack
 **Solution 1:** 
 
 *We can build an app that educates users on how impactful their use of LLM's are. This will be done by allowing the user to input a potential prompt that they would normally use on an LLM, and tell them how resource intensive that particular prompt is. We can make it interactive by showing graphics that compare it to other things with similar energy usage.*
+
 ---
 
 # Track 2: Technology for Public Goods 
