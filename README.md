@@ -138,7 +138,11 @@ We will be using Django + React tech stack
 
 **Q1: What database are you using for your project (SQLite, PostgreSQL, noSQL, MongoDB,...), and why do you choose it?**
 
+We plan to use SQLite for this project. Since this app will be rather small-scale, SQLite is sufficient since it's lightweight and the database can be stored on a single file locally.
+
 **Q2: How will database be helpful to your project? How will you design your database to support your application features?**
+
+The database will store information about the user's schedule as well as CTA and Metra schedules. This will include tables that stores the student's account information, UIC buildings and rooms, transit routes, and commute times. 
 
 ## Third-Party API Integration
 
@@ -154,7 +158,11 @@ We will be using Django + React tech stack
 
 **Q5: What authentication method will you use (e.g., username/password, OAuth, JWT)?**
 
+username/password
+
 **Q6: How will you store and protect sensitive user data (e.g., passwords, tokens)?**
+
+We plan to implement usernames and passwords because of its simplicity and because the app won't store any highly sensitive information about the student, so more secure methods aren't needed. However, we will store the passwords using a hashing algorithm to ensure security. 
 
 ## Deployment
 
