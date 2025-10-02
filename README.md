@@ -112,16 +112,25 @@ We will be using Django + React tech stack
 
 **Idea - Story - Inspiration 4:**
 
-**Implementation 4:**
+*When a major life change happens, many people fear the future and this leads to anxiety, gradually they get used to navigating their current life, finding patterns and routines that help them settle their anxities and exposure leads to less fear.*
+
+**Implementation 4:** 
+
+*We build a website or app where everytime you click anywhere on the screen, the layout changes, simulating anxiety/uncertainty. Eventually the user will find a pattern to the layout changes. The goal is to make a puzzle-like web app that demonstrates the state of the mind during major life changes, and the end goal is to show that things get better gradually.*
 
 **Idea - Story - Inspiration 5:**
 
+*"Everywhere at the End of Time" by The Caretaker is a musical project that attempts to capture the progression of dementia through sound. Instead of music, we will make a web app that simulates Alzheimer's disease. Alzheimer's known to gradually erode memory and recognition, which can terrifying and isolation. Trough this web app, we can use creative UI elements to showcase the 'decays' that occur over time and help family members of Alzheimer's patients better understand the struggle their loved ones go through, while also educating about the stages and effects of Alzheimer's.*
+
 **Implementation 5:**
 
+*The project would take the form of a website or app that begins as a seemingly normal interface (clean, orderly, filled with content). As time passes or as the user interacts, the interface starts to glitch: text fragments disappear, images blur or distort, navigation breaks down. Eventually, the site degrades into a black, empty screen, symbolizing advanced Alzheimer’s. The app will also reveal short facts or narratives about Alzheimer’s at each stage of decay.*
 
 # Idea Finalization
 
 **From 5 project ideas you have above, please choose one of the project that you are going with for the rest of the semester. Explain why you are going with that project**
+
+*We are going with Track 2: Problem 3. We are going with this track since it helps the community we are a part of and could potentially be scaled and developed further.*
 
 # Extra Credit (Only do this if you are done with Idea Finalization)
 
@@ -135,7 +144,11 @@ We will be using Django + React tech stack
 
 **Q3: Which third-party API(s) will you integrate into your project? What data will you pull from the API(s), and how will you use it in your application?**
 
+*The third-party API(s) we will use are Metra's API and CTA API to get bus and train information*
+
 **Q4: Does your API key has limitations such as rate limits or downtime? How are you going to deal with that?**
+
+*Some limitations include downtime, to ensure feasilbe use, we will have a local database with information about the areas closest to UIC.*
 
 ## Authentication and Security
 
