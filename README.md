@@ -1,21 +1,25 @@
 # Logistics  
 
 **Q1:** At what time in the week would your group be available to meet online?  
-**Example:**  
-*We are available to meet online on weekends from 12pm-8pm (12-2pm Saturday + Sunday), as well as from 4pm-6pm on Fridays.*  
-*Our weekly meeting will be Thursday 11am-12pm.*  
+**Answer:**  
+*We will keep an open discourse on discord and follow up in our weekly meetings.*  
+*Our weekly meeting will be Monday 4pm-5pm.*  
 
 ---
 
 # Timeline: Weekly Meeting Goals  
 
 **Q2:** What is your goals that your group want to achieve in each weekly meeting?  
-**Example:**  
-*Prior to 3/13: Weekly Meeting we will plan out some preliminary info/idea for the project itself ahead of the scheduled meeting like which data source/API and data structures we will use in our backend. We will browse [the given list of public APIs for inspiration](https://github.com/public-apis/public-apis).*  
+**Answer:**  
+*Prior to 10/02: Weekly Meeting we will plan out some preliminary info/idea for the project itself ahead of the scheduled meeting and work on completing Milestone 2.*  
 
-*During week of 3/25: Work on the project rough draft itself to make a functioning project with data input, data structure usage, and processing into output on the frontend.*  
+*During week of 10/07: Finalise details of the track, and the technologies to be used. Hava a completed wireframe and a working figma prototype.*  
 
-*Prior to 4/17: Meet together weekly to target project weakpoints/bugs and possibly visit office hours to get guidance if the progress feels weak.*  
+*During week of 10/14: Have a file tree ready and start the implementation of the wireframe. By the end of the week the rough outline is ready.*
+
+*During week of 10/21 - 11/4: Have most features implemented and work out the bugs.*
+
+*Prior to 11/24: Finish deployment and work out any last kinks and clean up code. Visit office hours to get guidance if the progress feels weak.*  
 
 ---
 
