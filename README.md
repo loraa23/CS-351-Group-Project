@@ -1,21 +1,16 @@
 # Logistics  
 
 **Q1:** At what time in the week would your group be available to meet online?  
-**Example:**  
-*We are available to meet online on weekends from 12pm-8pm (12-2pm Saturday + Sunday), as well as from 4pm-6pm on Fridays.*  
-*Our weekly meeting will be Thursday 11am-12pm.*  
+
+*Our weekly meeting will be Monday Afteroon at 4pm-5pm.*  
 
 ---
 
 # Timeline: Weekly Meeting Goals  
 
 **Q2:** What is your goals that your group want to achieve in each weekly meeting?  
-**Example:**  
-*Prior to 3/13: Weekly Meeting we will plan out some preliminary info/idea for the project itself ahead of the scheduled meeting like which data source/API and data structures we will use in our backend. We will browse [the given list of public APIs for inspiration](https://github.com/public-apis/public-apis).*  
-
-*During week of 3/25: Work on the project rough draft itself to make a functioning project with data input, data structure usage, and processing into output on the frontend.*  
-
-*Prior to 4/17: Meet together weekly to target project weakpoints/bugs and possibly visit office hours to get guidance if the progress feels weak.*  
+ 
+*During our weekly meetings, we want to focus on making steady progress together. Our main goals are to plan and build the core parts of the project, set up the database, and make sure the backend connects smoothly with the frontend. We’ll also use this time to test features as we create them, fix any issues that come up, and check in on each other so we stay on track for upcoming milestones.*  
 
 ---
 
