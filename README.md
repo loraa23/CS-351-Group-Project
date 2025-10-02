@@ -168,4 +168,9 @@ We plan to implement usernames and passwords because of its simplicity and becau
 
 **Q7: Where will you deploy your project (e.g., Heroku, AWS, Render)? How will you manage environment variables and secrets during deployment?**
 
+We plan to use Heroku to deploy our project.
+We will use a .env file to manage environment variables and secrets, using .gitignore to make sure it's not stored on publicly on github. 
+
 **Q8: How will you ensure your deployment is reliable and easy to update?**
+
+We will use git-based deployment so that pushing to the main branch automatically redeploys the app.
