@@ -82,19 +82,30 @@ We will be using Django + React tech stack
 # Track 1: Tackling Generative AI Consequences
 **Problem 1:** 
 
+*LLM's are resource intensive and people are concerned about it impact on the environment. " Each time a model is used, perhaps by an individual asking ChatGPT to summarize an email, the computing hardware that performs those operations consumes energy. Researchers have estimated that a ChatGPT query consumes about five times more electricity than a simple web search." - MIT (https://news.mit.edu/2025/explained-generative-ai-environmental-impact-0117)*
+
 **Solution 1:** 
 
+*We can build an app that educates users on how impactful their use of LLM's are. This will be done by allowing the user to input a potential prompt that they would normally use on an LLM, and tell them how resource intensive that particular prompt is. We can make it interactive by showing graphics that compare it to other things with similar energy usage.*
 ---
 
 # Track 2: Technology for Public Goods 
 
 **Problem 2:**
 
+*As a commuter at UIC, sometimes it can be difficult to pick class times that fit well with metras schedule. Sometimes I end up having to wait another hour for the next train because of when my class ends.*
+
 **Solution 2:** 
+
+*Develop an app where you can input your uic schedule, and it will output suggested Metra trains to take that optimizes commute time while making sure you get to school on time. Could offer an option that does the opposite where you input your train, and it will suggest UIC class times based on UIC class structure. This makes sure to minimize commute time, so you're not waiting a long time for the next train after class.*
 
 **Problem 3:** 
 
+*As an incoming student or transfer student, it can be quite hard to navigate the UIC campus and locate certain rooms. As UIC is a manily a commuter school, many new students might find it tricky to navigate public transportation.*
+
 **Solution 3:**  
+
+*Make a web app that helps students determine where their classes are located, help them familiarize themselves with CTA trains and buses. Students will be able to enter the station closest to them and it will determine their commute time and which trains they have to take, and what busses to take from Ogilvie Transportation Center or Union Station.*
 
 # Track 3: Creative Coding and Cultural Expression
 
