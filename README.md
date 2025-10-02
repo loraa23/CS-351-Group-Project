@@ -3,12 +3,25 @@
 **Q1:** At what time in the week would your group be available to meet online?  
 
 *Our weekly meeting will be Monday Afteroon at 4pm-5pm.*  
+**Answer:**  
+*We will keep an open discourse on discord and follow up in our weekly meetings.*  
+*Our weekly meeting will be Monday 4pm-5pm.*  
 
 ---
 
 # Timeline: Weekly Meeting Goals  
 
 **Q2:** What is your goals that your group want to achieve in each weekly meeting?  
+**Answer:**  
+*Prior to 10/02: Weekly Meeting we will plan out some preliminary info/idea for the project itself ahead of the scheduled meeting and work on completing Milestone 2.*  
+
+*During week of 10/07: Finalise details of the track, and the technologies to be used. Hava a completed wireframe and a working figma prototype.*  
+
+*During week of 10/14: Have a file tree ready and start the implementation of the wireframe. By the end of the week the rough outline is ready.*
+
+*During week of 10/21 - 11/4: Have most features implemented and work out the bugs.*
+
+*Prior to 11/24: Finish deployment and work out any last kinks and clean up code. Visit office hours to get guidance if the progress feels weak.*  
  
 *During our weekly meetings, we want to focus on making steady progress together. Our main goals are to plan and build the core parts of the project, set up the database, and make sure the backend connects smoothly with the frontend. We’ll also use this time to test features as we create them, fix any issues that come up, and check in on each other so we stay on track for upcoming milestones.*  
 
