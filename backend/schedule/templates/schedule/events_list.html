@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Events
+{% endblock %}
+
+{% block content %}
+    <section>
+
+    <h1>Events</h1>
+        {% for event in events %}
+            <article clas='event'>
+                <h2>{{ event.title }}</h2>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}
