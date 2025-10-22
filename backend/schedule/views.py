@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Event
 from .forms import UploadForm
+from .utils import parse_ics
 
 
 # from tutorial, not needed in final project
@@ -16,7 +17,8 @@ def upload_form(request):
         if form.is_valid():
             upload = form.save()
 
-            # to-do: ics parsing (create and import parse_ics from .utils)
+            # to-do: ics parsing (create and import parse_ics.py from .utils)
+            event = parse_ics(upload.file.path)
     else:
         form = UploadForm()
 
