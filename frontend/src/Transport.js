@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import './Transport.css'
-
+import App from './App'
 function Transport() {
     const location = useLocation();
 
@@ -60,10 +60,14 @@ function Transport() {
                     </div>
                 </div>
                 <nav>
-                    <Link to="/transport"><button id='start'>Next</button></Link>
+                    <Link to="/"><button id='back'>Back</button></Link>
+                    <Link to="/transport"><button id='next'>Next</button></Link>
                 </nav>
             </header>)}
-
+            <Routes>
+                <Route path="/transport" element={<Transport />} />
+                <Route path="/" element={<App />} />
+            </Routes>
         </div>
     )
 }
