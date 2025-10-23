@@ -19,6 +19,6 @@ def upload_form(request):
     return render(request, 'schedule/upload_form.html', {'form': form})
 
 #Send data to frontend
-@api_view(['GET'])
-def getData(request):
-    return Response({"message": "Hello from Django!"})
+# @api_view(['GET'])
+# def getData(request):
+#     return Response({"message": "Hello from Django!"})
