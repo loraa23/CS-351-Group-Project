@@ -14,7 +14,7 @@ env/
 .env
 
 # Django media uploads
-backend/media/
+backend/media/uic_schedules
 
 # Django static collection
 backend/staticfiles/
