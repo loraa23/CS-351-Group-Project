@@ -3,12 +3,6 @@ from .models import Event
 from .forms import UploadForm
 from .utils import parse_ics
 
-
-# from tutorial, not needed in final project
-def events_list(request):
-    events = Event.objects.all()
-    return render(request, 'schedule/events_list.html', {'events':events})
-
 # handles .ics file upload and parsing 
 # each .ics file is stored in media\uic_schedules
 def upload_form(request):
