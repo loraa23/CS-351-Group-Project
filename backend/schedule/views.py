@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .models import Event
 from .forms import UploadForm
-
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 # from tutorial, not needed in final project
 def events_list(request):
@@ -21,3 +22,8 @@ def upload_form(request):
         form = UploadForm()
 
     return render(request, 'schedule/upload_form.html', {'form': form})
+
+#Send data to frontend
+@api_view(['GET'])
+def getData(request):
+    return Response({"message": "Hello from Django!"})

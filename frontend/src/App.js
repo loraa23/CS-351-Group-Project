@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import { Routes, Route, Link, useLocation } from 'react-router-dom'
+import Transport from './Transport'
 import './App.css';
 
 function App() {
+  const location = useLocation();
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {location.pathname === '/' && (
+        <header>
+          <div className='Title'>
+            <p>Welcome to UIC Campus Navigator</p>
+            <p id='subTitle'>Your one stop to all campus related inquires</p>
+            <nav>
+              <Link to="/transport"><button id='start'>Get Started</button></Link>
+            </nav>
+          </div>
+        </header>
+      )}
+      
+      
+      <Routes>
+        <Route path="/transport" element={<Transport />} />
+        <Route path="/" element={
+          <div>
+          </div>
+        } />
+      </Routes>
     </div>
   );
 }
