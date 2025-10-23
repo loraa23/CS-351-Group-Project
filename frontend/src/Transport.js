@@ -28,9 +28,17 @@ function Transport() {
                         value={trainLine} 
                         onChange={handleTrainChange}>
                             <option>Train Line</option>
-                            <option>Ogilvie Transportation Center</option>
-                            <option>Chicago Transit Authority(CTA)</option>
-                            <option>Chicago Union Station</option>
+                            <option value="BNSF">BNSF (BNSF)</option>
+                            <option value="HC">Heritage Corridor (HC)</option>
+                            <option value="ME">Metra Electric (ME)</option>
+                            <option value="MD-N">Milwaukee District North (MD-N)</option>
+                            <option value="MD-W">Milwaukee District West (MD-W)</option>
+                            <option value="NCS">North Central Service (NCS)</option>
+                            <option value="RI">Rock Island (RI)</option>
+                            <option value="SWS">SouthWest Service (SWS)</option>
+                            <option value="UP-N">Union Pacific North (UP-N)</option>
+                            <option value="UP-NW">Union Pacific Northwest (UP-NW)</option>
+                            <option value="UP-W">Union Pacific West (UP-W)</option>
                         </select>
                     </div>
                     <div className="stations">
