@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # holds each class or commute time block
 class Event(models.Model):
@@ -9,11 +10,14 @@ class Event(models.Model):
     campus = models.CharField(max_length=50, blank=True)
     building = models.CharField(max_length=50, blank=True)
     room = models.CharField(max_length=20, blank=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="events")
 
     def __str__(self):
         return self.title
 
 # holds uploaded .ics files of uic schedule
-class UICSchedule(models.Model):
+class Schedule(models.Model):
+    title = models.CharField(max_length=200)
     file = models.FileField(upload_to='uic_schedules/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="schedules")

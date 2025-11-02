@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
-import './Transport.css'
+import './styles/Transport.css'
 import App from './App'
 function Transport() {
     const location = useLocation();

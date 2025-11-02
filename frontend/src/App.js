@@ -1,32 +1,40 @@
-import { Routes, Route, Link, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom'
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import Home from "./pages/Home"
+import NotFound from "./pages/NotFound"
+import ProtectedRoute from './components/ProtectedRoute'
 import Transport from './Transport'
-import './App.css';
+import './styles/App.css';
+
+function Logout() {
+  localStorage.clear()
+  return <Navigate to="/login" />
+}
+
+function RegisterAndLogout() {
+  localStorage.clear()
+  return <Register />
+}
 
 function App() {
   const location = useLocation();
   
   return (
     <div className="App">
-
-      {location.pathname === '/' && (
-        <header>
-          <div className='Title'>
-            <p>Welcome to UIC Campus Navigator</p>
-            <p id='subTitle'>Your one stop to all campus related inquires</p>
-            <nav>
-              <Link to="/transport"><button id='start'>Get Started</button></Link>
-            </nav>
-          </div>
-        </header>
-      )}
-      
-      
       <Routes>
-        <Route path="/transport" element={<Transport />} />
-        <Route path="/" element={
-          <div>
-          </div>
-        } />
+        <Route 
+          path="/" 
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute> 
+          } 
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/register" element={<RegisterAndLogout />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
