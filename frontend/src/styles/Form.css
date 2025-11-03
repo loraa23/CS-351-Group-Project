@@ -4,10 +4,10 @@
   align-items: center;
   justify-content: center;
   margin: 50px auto;
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .form-input {
@@ -33,4 +33,26 @@
 
 .form-button:hover {
   background-color: #0056b3;
+}
+
+.file-upload {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 500px
+}
+
+.form-footer {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.form-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.form-link:hover {
+  text-decoration: underline;
 }

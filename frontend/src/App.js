@@ -4,6 +4,7 @@ import Register from "./pages/Register"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import ProtectedRoute from './components/ProtectedRoute'
+import Schedule from "./pages/Schedule"
 import Transport from './Transport'
 import './styles/App.css';
 
@@ -23,11 +24,17 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route 
-          path="/" 
+        <Route path="/" 
           element={
             <ProtectedRoute>
               <Home />
+            </ProtectedRoute> 
+          } 
+        />
+        <Route path="/schedule" 
+          element={
+            <ProtectedRoute>
+              <Schedule />
             </ProtectedRoute> 
           } 
         />

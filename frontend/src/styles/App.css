@@ -39,17 +39,17 @@
 
 .Title{
   /* border: 1px solid black; */
-  height: 100vh;
+  /* height: 100vh; */
   border-radius: 5rem;
-  display: grid;
+  /* display: grid; */
   place-items: center;
 }
 
 .Title p{
-  font-size: 11vh;
+  font-size: 2vh;
   font-family: sans-serif;
   /* border: 5px solid navy; */
-  padding: 5vh;
+  /* padding: 1vh; */
   border-radius: 2vh;
   /* background-color: navy; */
 
@@ -58,7 +58,7 @@
 #subTitle{
   display: block;
   /* border: 5px solid navy; */
-  padding: 5vh;
+  /* padding: 1vh; */
   border-radius: 2vh;
   font-size: 5vh;
   margin-top: 0;
