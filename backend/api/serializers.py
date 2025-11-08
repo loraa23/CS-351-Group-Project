@@ -22,7 +22,7 @@ class UserSerializer(serializers.ModelSerializer):
 class ScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Schedule
-        fields = ['title', 'file', 'uploaded_at', 'author']
+        fields = ['id', 'title', 'file', 'uploaded_at', 'author']
         extra_kwargs = {
             "author": {"read_only": True},
             "title": {"read_only": True},
