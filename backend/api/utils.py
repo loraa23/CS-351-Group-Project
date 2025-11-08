@@ -1,33 +1,71 @@
 from icalendar import Calendar
-from .models import Event
+from datetime import datetime, date
 import re
 
 
-# parse ics file and insert information into an Event object
-# todo: put event in red-black tree?
+DUMMY_WEEK = {
+    "MO": date(2025, 1, 6),
+    "TU": date(2025, 1, 7),
+    "WE": date(2025, 1, 8),
+    "TH": date(2025, 1, 9),
+    "FR": date(2025, 1, 10),
+    "SA": date(2025, 1, 11),
+    "SU": date(2025, 1, 12),
+}
+
 def parse_ics(file_path):
-    with open(file_path, 'rb') as f:
+    events = []
+
+    with open(file_path, "rb") as f:
         cal = Calendar.from_ical(f.read())
 
-        for component in cal.walk():
+        for comp in cal.walk():
 
-            # extract each event (class or commute) and create Event object
-            if component.name == "VEVENT":
-                title = str(component.get('summary'))
-                start = component.get('dtstart').dt.time()
-                end = component.get('dtend').dt.time()
-                location = str(component.get('location', 'Unknown'))
-                campus, building, room = parse_location(location)
+            if comp.name != "VEVENT":
+                continue
 
-                rrule = component.get('rrule')
-                if rrule and 'BYDAY' in rrule:
-                    days = rrule['BYDAY']
+            summary = str(comp.get("summary"))
 
+            dtstart = comp.get("dtstart").dt  # real datetime
+            dtend = comp.get("dtend").dt
 
-                event = Event(title=title, start_time=start, end_time=end, days=days, campus=campus, building=building, room=room)
-                event.save()
+            start_time = dtstart.time()
+            end_time = dtend.time()
 
-    return None
+            # Recurrence rule
+            rrule = comp.get("rrule")
+            if rrule and "BYDAY" in rrule:
+                days = rrule["BYDAY"]  # e.g., ["MO","WE","FR"]
+            else:
+                # One-off event: derive weekday
+                weekday = dtstart.strftime("%a").upper()[:2]
+                days = [weekday]
+
+            location = str(comp.get("location", "Unknown"))
+
+            # Create separate events per day
+            for day_code in days:
+                dummy_date = DUMMY_WEEK[day_code]
+
+                # datetime used for front-end
+                display_start = datetime.combine(dummy_date, start_time)
+                display_end = datetime.combine(dummy_date, end_time)
+
+                events.append({
+                    "title": summary,
+                    "days": days,
+                    "location": location,
+
+                    # real ICS date-times preserved
+                    "original_start": dtstart.isoformat(),
+                    "original_end": dtend.isoformat(),
+
+                    # generic weekly display date-times
+                    "display_start": display_start.isoformat(),
+                    "display_end": display_end.isoformat(),
+                })
+
+    return events
 
 # extracts campus, building, and room number from a location string
 # formatted: LOCATION:Campus: X Building: Y Room: Z
