@@ -19,9 +19,11 @@ class ScheduleListCreate(generics.ListCreateAPIView):
     
     def perform_create(self, serializer):
         if serializer.is_valid():
+            file = self.request.FILES.get("file")
             user = self.request.user
-            count = Schedule.objects.filter(author=user).count()
-            title = f"schedule_{count + 1}"
+            # count = Schedule.objects.filter(author=user).count()
+            # title = f"schedule_{count + 1}"
+            title = file.name
 
             serializer.save(author=user, title=title)
         else:
