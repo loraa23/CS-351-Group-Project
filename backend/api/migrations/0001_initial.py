@@ -15,20 +15,6 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Event',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200)),
-                ('start_time', models.TimeField(null=True)),
-                ('end_time', models.TimeField(null=True)),
-                ('days', models.CharField(blank=True, max_length=20)),
-                ('campus', models.CharField(blank=True, max_length=50)),
-                ('building', models.CharField(blank=True, max_length=50)),
-                ('room', models.CharField(blank=True, max_length=20)),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='events', to=settings.AUTH_USER_MODEL)),
-            ],
-        ),
-        migrations.CreateModel(
             name='Schedule',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),

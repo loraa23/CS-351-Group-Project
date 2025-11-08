@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from .models import Event, Schedule
+from .models import Schedule
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -13,12 +13,6 @@ class UserSerializer(serializers.ModelSerializer):
             user = User.objects.create_user(**validated_data)
             return user
         
-# class EventSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Event
-#         fields = ['title', 'start_time', 'end_time', 'campus', 'days', 'building', 'room', 'author']
-#         extra_kwargs = {"author": {"read_only": True}}
-
 class ScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Schedule
