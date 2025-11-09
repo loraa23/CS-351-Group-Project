@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import api from "../api";
 import { ACCESS_TOKEN } from "../constants";
-// import "../styles/Home.css";
+import "../styles/Transport.css";
 
 function Home() {
   // schedule states

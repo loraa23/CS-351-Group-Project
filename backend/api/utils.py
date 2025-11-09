@@ -151,16 +151,16 @@ def compute_class_bounds(events):
     return bounds
 
 
-# not currently in use
+# not currently in use, but could be useful if we need exact class locations
 # extracts campus, building, and room number from a location string
 # formatted: LOCATION:Campus: X Building: Y Room: Z
-def parse_location(location_str):
-    campus_match = re.search(r'Campus:\s*(.*?)\s*(?=Building:|$)', location_str)
-    building_match = re.search(r'Building:\s*(.*?)\s*(?=Room:|$)', location_str)
-    room_match = re.search(r'Room:\s*(.*)$', location_str)
+# def parse_location(location_str):
+#     campus_match = re.search(r'Campus:\s*(.*?)\s*(?=Building:|$)', location_str)
+#     building_match = re.search(r'Building:\s*(.*?)\s*(?=Room:|$)', location_str)
+#     room_match = re.search(r'Room:\s*(.*)$', location_str)
 
-    campus = campus_match.group(1).strip() if campus_match else ""
-    building = building_match.group(1).strip() if building_match else ""
-    room = room_match.group(1).strip() if room_match else ""
+#     campus = campus_match.group(1).strip() if campus_match else ""
+#     building = building_match.group(1).strip() if building_match else ""
+#     room = room_match.group(1).strip() if room_match else ""
 
-    return campus, building, room
+#     return campus, building, room
