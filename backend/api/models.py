@@ -8,3 +8,6 @@ class Schedule(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="schedules")
     
+    def delete(self, *args, **kwargs):
+        self.file.delete(save=False) # delete file from storage
+        super().delete(*args, **kwargs) # delete model instance

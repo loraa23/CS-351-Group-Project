@@ -3,60 +3,121 @@
 RED = True
 BLACK = False
 
-class RBNode:
-    def __init__(self, event):
-        self.event = event
+class Node:
+    def __init__(self, key, value, color=RED):
+        self.key = key          # typically event start datetime
+        self.value = value      # the event object
+        self.color = color      # RED or BLACK
         self.left = None
         self.right = None
         self.parent = None
-        self.color = RED
 
 class RedBlackTree:
     def __init__(self):
-        self.root = None
+        self.nil = Node(None, None, color=BLACK)  # sentinel
+        self.root = self.nil
 
-    def insert(self, event):
-        new_node = RBNode(event)
+    # Left rotate
+    def left_rotate(self, x):
+        y = x.right
+        x.right = y.left
+        if y.left != self.nil:
+            y.left.parent = x
+        y.parent = x.parent
+        if x.parent == None:
+            self.root = y
+        elif x == x.parent.left:
+            x.parent.left = y
+        else:
+            x.parent.right = y
+        y.left = x
+        x.parent = y
 
-        if self.root is None:
-            new_node.color = BLACK 
-            self.root = new_node
-            return
+    # Right rotate
+    def right_rotate(self, y):
+        x = y.left
+        y.left = x.right
+        if x.right != self.nil:
+            x.right.parent = y
+        x.parent = y.parent
+        if y.parent == None:
+            self.root = x
+        elif y == y.parent.right:
+            y.parent.right = x
+        else:
+            y.parent.left = x
+        x.right = y
+        y.parent = x
 
-        current = self.root
-        while True:
-            if event.start_time < current.event.start_time:
-                if current.left is None:
-                    current.left = new_node
-                    new_node.parent = current
-                    break
-                current = current.left
+    # Insert node
+    def insert(self, key, value):
+        node = Node(key, value)
+        node.left = self.nil
+        node.right = self.nil
+        node.parent = None
+
+        y = None
+        x = self.root
+
+        while x != self.nil:
+            y = x
+            if node.key < x.key:
+                x = x.left
             else:
-                if current.right is None:
-                    current.right = new_node
-                    new_node.parent = current
-                    break
-                current = current.right
+                x = x.right
 
-        # self._fix_insert(new_node)  # balancing to be implemented later
+        node.parent = y
+        if y == None:
+            self.root = node
+        elif node.key < y.key:
+            y.left = node
+        else:
+            y.right = node
 
-    def inorder(self):
-        result = []
-        self._inorder_helper(self.root, result)
+        node.color = RED
+        self.insert_fixup(node)
+
+    # Fix RB tree properties after insert
+    def insert_fixup(self, z):
+        while z.parent and z.parent.color == RED:
+            if z.parent == z.parent.parent.left:
+                y = z.parent.parent.right
+                if y and y.color == RED:
+                    z.parent.color = BLACK
+                    y.color = BLACK
+                    z.parent.parent.color = RED
+                    z = z.parent.parent
+                else:
+                    if z == z.parent.right:
+                        z = z.parent
+                        self.left_rotate(z)
+                    z.parent.color = BLACK
+                    z.parent.parent.color = RED
+                    self.right_rotate(z.parent.parent)
+            else:
+                y = z.parent.parent.left
+                if y and y.color == RED:
+                    z.parent.color = BLACK
+                    y.color = BLACK
+                    z.parent.parent.color = RED
+                    z = z.parent.parent
+                else:
+                    if z == z.parent.left:
+                        z = z.parent
+                        self.right_rotate(z)
+                    z.parent.color = BLACK
+                    z.parent.parent.color = RED
+                    self.left_rotate(z.parent.parent)
+        self.root.color = BLACK
+
+    # In-order traversal to get sorted events
+    def inorder(self, node=None, result=None):
+        if result is None:
+            result = []
+        if node is None:
+            node = self.root
+        if node != self.nil:
+            self.inorder(node.left, result)
+            result.append(node.value)
+            self.inorder(node.right, result)
         return result
-
-    def _inorder_helper(self, node, result):
-        if node:
-            self._inorder_helper(node.left, result)
-            result.append(node.event)
-            self._inorder_helper(node.right, result)
-
-    # Rotation and balancing
-    def _left_rotate(self, node):
-        pass
-
-    def _right_rotate(self, node):
-        pass
-
-    def _fix_insert(self, node):
-        pass

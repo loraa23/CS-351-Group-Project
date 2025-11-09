@@ -16,6 +16,9 @@ env/
 # Django media uploads
 backend/media/uic_schedules
 
+# metra schedule
+backend/metra_gtfs
+
 # Django static collection
 backend/staticfiles/
 

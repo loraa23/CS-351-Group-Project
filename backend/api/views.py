@@ -4,10 +4,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .serializers import UserSerializer, ScheduleSerializer
+from .metra import get_stations_for_route
 from .models import Schedule
 
 # from .forms import UploadForm
-from .utils import parse_ics
+from .utils import parse_ics, generate_commute_schedule
 
 class ScheduleListCreate(generics.ListCreateAPIView):
     serializer_class = ScheduleSerializer
@@ -47,6 +48,8 @@ class GenerateSchedule(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
+        train_line = request.data.get("train_line")
+        station = request.data.get("station")
         user = request.user
 
         # Get the latest uploaded schedule
@@ -56,14 +59,19 @@ class GenerateSchedule(APIView):
 
         # Parse ICS → Python objects
         try:
-            events = parse_ics(schedule.file.path)
+            # events = parse_ics(schedule.file.path)
+            events = generate_commute_schedule(schedule.file.path, train_line, station)
         except Exception as e:
             return Response(
                 {"error": f"Failed to parse schedule: {e}"},
                 status=500
             )
-
-        # TODO: add train schedule events
-
-
+        
         return Response(events)  
+    
+class GetStations(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, route_id):
+        stations = get_stations_for_route(route_id)
+        return Response(stations)

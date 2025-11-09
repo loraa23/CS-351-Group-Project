@@ -13,14 +13,7 @@ function Home() {
   // transport selection states
   const [trainLine, setTrainLine] = useState("");
   const [station, setStation] = useState("");
-
-  // transport selection handlers
-  const handleTrainChange = (event) => {
-    setTrainLine(event.target.value);
-  };
-  const handleStationChange = (event) => {
-    setStation(event.target.value);
-  };
+  const [stations, setStations] = useState([]);
 
   // fetch uploaded schedules
   useEffect(() => {
@@ -51,7 +44,6 @@ function Home() {
           Authorization: `Bearer ${token}`,
         },
       });
-      alert("File uploaded successfully!");
       setSchedules((prev) => [...prev, res.data]);
       setFile(null);
       setSelectedSchedule(res.data); // auto-select uploaded file
@@ -78,6 +70,30 @@ function Home() {
       alert("Failed to delete schedule.");
     }
   };
+
+  // transport selection handlers
+  const handleStationChange = (event) => {
+    setStation(event.target.value);
+  };
+
+  // fetch train stations for given line
+  const handleTrainChange = async (e) => {
+    const line = e.target.value;
+    setTrainLine(line);
+
+    if (line) {
+        try {
+        const res = await api.get(`/api/metra/stations/${line}/`);
+        setStations(res.data);
+        } catch (err) {
+        console.error("Failed to load stations:", err);
+        }
+    } else {
+        setStations([]);
+    }
+
+    setStation(""); // reset selected station
+    };
 
   return (
     <div className="page-container">
@@ -155,15 +171,12 @@ function Home() {
 
           <div className="stations">
             <select value={station} onChange={handleStationChange}>
-              <option value="">Departure Station</option>
-              <option>Chicago OTC</option>
-              <option>Clybourn</option>
-              <option>Irving Park</option>
-              <option>Jefferson Park</option>
-              <option>Norwood Park</option>
-              <option>Edison Park</option>
-              <option>Park Ridge</option>
-              <option>Arlington Park</option>
+                <option value="">Depature Station</option>
+                {stations.map((s, idx) => (
+                    <option key={idx} value={s}>
+                    {s}
+                    </option>
+                ))}
             </select>
           </div>
         </div>
@@ -174,11 +187,12 @@ function Home() {
         <Link to="/Logout">
           <button id="back">Logout</button>
         </Link>
-        <Link
-          to="/Schedule"
-          state={{ scheduleId: selectedSchedule?.id }}
+        <Link to="/Schedule" state={{ 
+            scheduleId: selectedSchedule?.id, 
+            trainLine: trainLine,
+            station: station}}
         >
-          <button id="next" disabled={!selectedSchedule}>
+          <button id="next" disabled={!selectedSchedule || !trainLine || !station}>
             Generate Schedule
           </button>
         </Link>
