@@ -6,6 +6,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from .serializers import UserSerializer, ScheduleSerializer
 from .metra import get_stations_for_route
 from .models import Schedule
+from .serializers import UserSerializer
 
 # from .forms import UploadForm
 from .utils import parse_ics, generate_commute_schedule

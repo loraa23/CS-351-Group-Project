@@ -37,32 +37,31 @@
   }
 }
 
-.Title{
+/* .Title{
   /* border: 1px solid black; */
   /* height: 100vh; */
-  border-radius: 5rem;
+  /* border-radius: 5rem; */
   /* display: grid; */
-  place-items: center;
-}
+  /* place-items: center; */
+/* }  */
 
-.Title p{
+/* .Title p{
   font-size: 2vh;
-  font-family: sans-serif;
+  font-family: sans-serif; */
   /* border: 5px solid navy; */
   /* padding: 1vh; */
-  border-radius: 2vh;
+  /* border-radius: 2vh; */
   /* background-color: navy; */
+/* } */
 
-}
-
-#subTitle{
-  display: block;
+/* #subTitle{
+  display: block; */
   /* border: 5px solid navy; */
   /* padding: 1vh; */
-  border-radius: 2vh;
+  /* border-radius: 2vh;
   font-size: 5vh;
   margin-top: 0;
-}
+} */
 
 #start{
   height: 15vh;

@@ -1,0 +1,216 @@
+.welcome header{
+    display: flexbox;
+    flex-direction: row;
+}
+
+.Title{
+  border-radius: 2vh;
+  width: 225vh;
+  height: 85vh;
+  margin-top: 15vh;
+  margin-bottom: 5vh;
+  display: flex;
+  gap: 6vh;
+  align-items: center;
+  flex-direction: row;
+  background-color: rgb(240, 203, 203);
+}
+
+.Title p{
+    margin: auto;
+    padding: auto;
+    font-family: 'Playfair';
+    font-optical-sizing: auto;
+    font-weight: 500; /*200 to 700*/ 
+    font-style: normal;
+    color: rgb(6, 6, 95);
+    text-align: center;
+    font-size: 12vh;
+}
+
+.Title img{
+    border-radius: 2vh;
+    border: 1vh solid white;
+    margin-right: 5vh;
+}
+#subTitle{
+    font-family: 'Lato';
+    font-weight: 400;
+    color: rgba(3, 3, 116, 0.829);
+    font-size: 2vh;
+}
+
+.action p{
+    font-family: 'Urbanist';
+    margin: 3vh;
+    padding: auto;
+    font-size: 4vh;
+    font-weight: 350;
+    
+}
+
+.menu{
+    
+    top: 0;
+    left: 0;
+    position: fixed;
+    margin: 1vw;
+    padding: 0;
+}
+
+.menu{
+    width: 45vh;
+    height: 15vh;
+    
+}
+.menu ul{
+   border-radius: 10px;
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: brown;
+}
+
+.menu ul li{
+    font-weight: 100;
+    font-family: 'Times New Roman', Times, serif;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 2vh 5vh;
+    float: left;
+}
+
+.menu ul li:hover{
+    background-color: rgb(182, 94, 94);
+}
+
+.action button{
+    margin: auto;
+    padding: auto;
+    font-size: 3vh;
+    border-radius: 2vh;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(182, 94, 94);
+    color: rgb(246, 246, 247);
+    border-color: aliceblue;
+    width: 10vw;
+    height: 7vh;
+    /* margin-top: 1vh; */
+    margin-bottom: 2vh;
+}
+
+.action button:hover{
+    background-color: rgb(141, 39, 39);
+}
+
+.about{
+  border-radius: 2vh;
+  width: 225vh;
+  height: 85vh;
+  margin-top: 15vh;
+  margin-bottom: 5vh;
+  display: flex;
+  gap: 76vh;
+  align-items: center;
+  background-image: url("https://i.pinimg.com/736x/04/5f/c7/045fc79c627cb33b7ebcdd0862a22edf.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.about div p{
+    margin-left: 2vh;
+    font-size: 7vh;
+    font-family: 'Urbanist';
+    font-weight: 500;
+    color: navy;
+}
+
+.review{
+    width: 900px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides{
+    display: flex;
+    animation: slide 12s infinite;
+}
+
+.slides img{
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 5vh;
+    margin-right: 20px;
+    border-radius: 2vh;
+}
+
+@keyframes slide {
+    0%, 25% {transform: translateX(0);}
+    33%, 58% {transform: translateX(-600px);}
+    66%, 91% {transform: translateX(-1200px);}
+    100% {transform: translateX(0);}
+}
+
+footer{
+    background-color: #111;
+    color: #eee;
+    padding: 40px 20px;
+    font-family: 'Lota', sans-serif;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.footer-section{
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-section h3{
+    margin-bottom: 15px;
+}
+
+.footer-section ul{
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a{
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover{
+    color: white;
+}
+
+.footer-bottom{
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    font-size: 14px;
+}
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media(max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}

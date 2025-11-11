@@ -7,8 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 body {
-  background-color: rgb(196, 5, 5);
-  color: aliceblue;
+  background-color: rgb(255, 254, 254);
+  color: rgb(7, 7, 7);
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

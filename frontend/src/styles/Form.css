@@ -20,7 +20,7 @@
 }
 
 .form-button {
-  width: 95%;
+  width: 90%;
   padding: 10px;
   margin: 20px 0;
   background-color: #007bff;
@@ -55,4 +55,42 @@
 
 .form-link:hover {
   text-decoration: underline;
+}
+
+.App{
+  display: flex;
+  gap: 15vh;
+  align-items: center;
+  flex-direction: row;
+}
+
+.App img{
+  margin: auto;
+  border: 2vh solid white;
+  border-radius: 2vh;
+}
+
+.image-carsole{
+  display: flex;
+  align-items: center;
+  width: 130vh;
+  height: 100vh;
+  /* border: 1px solid red; */
+  background-color: red;
+  overflow: hidden;
+}
+
+.images{
+    display: flex;
+    animation: slide 12s infinite;
+    
+}
+
+.images img{
+    width: 45vw;
+    height: 80vh;
+    object-fit: cover;
+    margin-bottom: 5vh;
+    margin-right: 20px;
+    border-radius: 2vh;
 }
