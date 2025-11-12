@@ -75,14 +75,13 @@
   align-items: center;
   width: 130vh;
   height: 100vh;
-  /* border: 1px solid red; */
   background-color: red;
   overflow: hidden;
 }
 
 .images{
     display: flex;
-    animation: slide 12s infinite;
+    animation: moves 12s infinite;
     
 }
 
@@ -93,4 +92,11 @@
     margin-bottom: 5vh;
     margin-right: 20px;
     border-radius: 2vh;
+}
+
+@keyframes moves {
+    0%, 25% {transform: translateX(0);}
+    33%, 58% {transform: translateX(-600px);}
+    66%, 91% {transform: translateX(-1200px);}
+    100% {transform: translateX(0);}
 }

@@ -18,7 +18,7 @@ function Welcome(){
                 <div className="Title">
                     <div className="content">
                         <p>Welcome to UIC Campus Navigator</p>
-                        <p id="subTitle">Your one stop to all campus related inquiries</p>
+                        <p id="subtitle">Your one stop to all campus related inquiries</p>
                         <div className="action">
                             <p>Already a member? Pick up where you left off </p>
                             <Link to="/login">

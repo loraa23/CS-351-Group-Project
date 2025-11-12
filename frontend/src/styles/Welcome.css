@@ -4,20 +4,23 @@
 }
 
 .Title{
+  padding: 1%;
+  margin-left: 1%;
   border-radius: 2vh;
-  width: 225vh;
+  width: 92vw;
   height: 85vh;
   margin-top: 15vh;
   margin-bottom: 5vh;
   display: flex;
-  gap: 6vh;
+  gap: 4vw;
   align-items: center;
   flex-direction: row;
   background-color: rgb(240, 203, 203);
 }
 
 .Title p{
-    margin: auto;
+    /* border: 1px solid black; */
+    margin: 2vh;
     padding: auto;
     font-family: 'Playfair';
     font-optical-sizing: auto;
@@ -25,41 +28,41 @@
     font-style: normal;
     color: rgb(6, 6, 95);
     text-align: center;
-    font-size: 12vh;
+    font-size: 4vw;
 }
 
 .Title img{
+    margin: 2%;
     border-radius: 2vh;
     border: 1vh solid white;
-    margin-right: 5vh;
+    
 }
-#subTitle{
+#subtitle{
     font-family: 'Lato';
     font-weight: 400;
     color: rgba(3, 3, 116, 0.829);
-    font-size: 2vh;
+    font-size: 1.5vw;
 }
 
 .action p{
     font-family: 'Urbanist';
     margin: 3vh;
     padding: auto;
-    font-size: 4vh;
+    font-size: 2vw;
     font-weight: 350;
     
 }
 
 .menu{
-    
     top: 0;
     left: 0;
     position: fixed;
-    margin: 1vw;
+    margin: 1vh;
     padding: 0;
 }
 
 .menu{
-    width: 45vh;
+    width: 20vw;
     height: 15vh;
     
 }
@@ -121,14 +124,15 @@
 }
 
 .about div p{
-    margin-left: 2vh;
-    font-size: 7vh;
+    margin-left: 3vh;
+    font-size: 6vh;
     font-family: 'Urbanist';
     font-weight: 500;
     color: navy;
 }
 
 .review{
+    margin-left: 40vh;
     width: 900px;
     overflow: hidden;
     border-radius: 10px;
@@ -158,7 +162,7 @@
 footer{
     background-color: #111;
     color: #eee;
-    padding: 40px 20px;
+    padding: 40px 12px;
     font-family: 'Lota', sans-serif;
 }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import api from "../api";
 import { ACCESS_TOKEN } from "../constants";
-import "../styles/Transport.css";
+import "../styles/Home.css";
 
 function Home() {
   // schedule states
@@ -98,6 +98,11 @@ function Home() {
   return (
     <div className="page-container">
       {/* Upload Section */}
+      <div className="menu">
+          <ul>
+            <li>Logout</li>
+          </ul>
+      </div>
       <section className="upload-section">
         <h2>Upload Your UIC Schedule (.ics)</h2>
         <form onSubmit={handleSubmit} className="form-container">

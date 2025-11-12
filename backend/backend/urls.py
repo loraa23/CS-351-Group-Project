@@ -13,7 +13,8 @@ urlpatterns = [
     path("api/token/refresh/", TokenRefreshView.as_view(), name="refresh"),
     path("api-auth/", include("rest_framework.urls")),
     path("api/", include("api.urls")),
-    path('', RedirectView.as_view(url='/api/', permanent=False))
+    # path('', RedirectView.as_view(url='/api/', permanent=False))
+    
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
