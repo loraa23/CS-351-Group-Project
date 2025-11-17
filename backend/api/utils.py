@@ -133,20 +133,35 @@ def generate_commute_schedule(file_path, train_line, station):
 # finds the earliest start time and latest end time for each day of the week
 def compute_class_bounds(events):
     bounds = {day: {"earliest": None, "latest": None} for day in WEEKDAYS}
+    trees = {day: RedBlackTree() for day in WEEKDAYS}
 
+    # insert each event into corresponding rbtree
     for event in events:
+        start = datetime.fromisoformat(event['display_start']).time()
+        end = datetime.fromisoformat(event['display_end']).time()
+        
         for day in event['days']:
+            trees[day].insert(start, {"start": start, "end": end}) # using start time as key
 
-            start = datetime.fromisoformat(event['display_start']).time()
-            end = datetime.fromisoformat(event['display_end']).time()
 
-            # earliest start
-            if bounds[day]["earliest"] is None or start < bounds[day]["earliest"]:
-                bounds[day]["earliest"] = start
+    # compute earliest and latest times using inorder traversal
+    for day in WEEKDAYS:
+        rbt = trees[day]
+        sorted_events = rbt.inorder() # sorted by start time
 
-            # latest end
-            if bounds[day]["latest"] is None or end > bounds[day]["latest"]:
-                bounds[day]["latest"] = end
+        if len(sorted_events) == 0:
+            continue
+
+        # earliest start = first element's start
+        bounds[day]["earliest"] = sorted_events[0]["start"]
+
+        # latest end = maximum end-time over all events for that day
+        latest = sorted_events[0]["end"]
+        for ev in sorted_events:
+            if ev["end"] > latest:
+                latest = ev["end"]
+
+        bounds[day]["latest"] = latest
 
     return bounds
 
