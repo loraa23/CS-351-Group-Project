@@ -8,7 +8,11 @@ body {
 }
 body {
   background-color: rgb(255, 254, 254);
+  /* background-image: url("https://cdn.pixabay.com/photo/2017/09/07/10/09/triangle-2724449_1280.png"); */
   color: rgb(7, 7, 7);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

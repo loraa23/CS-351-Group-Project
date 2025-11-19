@@ -3,24 +3,29 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 50px auto;
+  margin: 1vw auto;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
+  width: 25vw;
+  height: 65vh;
+  font-size: 1.5vw;
 }
 
 .form-input {
-  width: 90%;
+  width: 20vw;
+  height: 8vh;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-size: 2vw;
 }
 
 .form-button {
-  width: 90%;
+  width: 20vw;
+  height: 8vh;
   padding: 10px;
   margin: 20px 0;
   background-color: #007bff;
@@ -29,6 +34,7 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  font-size: 2vw;
 }
 
 .form-button:hover {

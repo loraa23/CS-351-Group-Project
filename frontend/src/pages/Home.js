@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import api from "../api";
 import { ACCESS_TOKEN } from "../constants";
 import "../styles/Home.css";
+import {ReactComponent as UploadIcon} from './Orion_upload.svg'
 
 function Home() {
   // schedule states
@@ -98,20 +99,36 @@ function Home() {
   return (
     <div className="page-container">
       {/* Upload Section */}
-      <div className="menu">
+      <div className="home-menu">
           <ul>
-            <li>Logout</li>
+            <Link to="/Logout">
+              <li>Logout</li>
+            </Link>
+            
+            <li>Help</li>
+            <li>Schedule</li>
+            <li>About</li>
           </ul>
       </div>
-      <section className="upload-section">
+      <section className="upload">
         <h2>Upload Your UIC Schedule (.ics)</h2>
-        <form onSubmit={handleSubmit} className="form-container">
-          <div className="file-upload">
+        <form onSubmit={handleSubmit} className="upload-container">
+          <div className="upload-file">
             <input
               type="file"
               accept=".ics"
               onChange={(e) => setFile(e.target.files[0])}
+              style={{display: 'none'}}
+              id="Inputfile"
             />
+            <label
+              htmlFor="Inputfile"
+            >
+              <UploadIcon width="40" height="40"/>
+              
+            </label>
+            {file && <span id='fileSpan'><p>{file.name}</p></span>}
+            
             <button type="submit">Upload</button>
           </div>
         </form>
@@ -130,7 +147,7 @@ function Home() {
           <option value="">-- Select a schedule --</option>
           {schedules.map((s) => (
             <option key={s.id} value={s.id}>
-              {s.title}
+                {s.title}
             </option>
           ))}
         </select>
@@ -179,10 +196,13 @@ function Home() {
                 <option value="">Depature Station</option>
                 {stations.map((s, idx) => (
                     <option key={idx} value={s}>
-                    {s}
+                      {s}
                     </option>
                 ))}
             </select>
+            <p>{trainLine}</p>
+            <p>{station}</p>
+           
           </div>
         </div>
       </section>
