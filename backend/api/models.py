@@ -10,4 +10,17 @@ class Schedule(models.Model):
     
     def delete(self, *args, **kwargs):
         self.file.delete(save=False) # delete file from storage
-        super().delete(*args, **kwargs) # delete model instance
+        super().delete(*args, **kwargs)
+
+# added for union-find grouping
+class StudentSchedule(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="student_schedules")
+    events = models.ManyToManyField('Event')
+
+# storing event blocks
+class Event(models.Model):
+    title = models.CharField(max_length=200)
+    start_time = models.TimeField(null=True, blank=True)
+    end_time = models.TimeField(null=True, blank=True)
+    days = models.CharField(max_length=20, blank=True)
+    location = models.CharField(max_length=200, blank=True)
