@@ -2,20 +2,29 @@
     display: flexbox;
     flex-direction: row;
 }
-
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1vh;
+    padding: 1vw;
+}
 .Title{
-  padding: 1%;
-  margin-left: 1%;
+  /* border: 1px solid black; */
+  padding: 1vw;
+  margin-left: 1vw;
   border-radius: 2vh;
   width: 92vw;
   height: 85vh;
-  margin-top: 15vh;
-  margin-bottom: 5vh;
+  /* margin-top: 15vh; */
+  /* margin-bottom: 5vh; */
   display: flex;
   gap: 4vw;
   align-items: center;
   flex-direction: row;
-  background-color: rgb(240, 203, 203);
+  background-color: rgb(219, 186, 186);
+  box-shadow: 0 4vh 6vw rgba(15, 2, 2, 0.1);
 }
 
 .Title p{
@@ -62,7 +71,7 @@
 }
 
 .menu{
-    width: 20vw;
+    width: 30vw;
     height: 15vh;
     
 }
@@ -77,6 +86,7 @@
 
 .menu ul li{
     font-weight: 100;
+    font-size: 2vw;
     font-family: 'Times New Roman', Times, serif;
     display: block;
     color: white;
@@ -109,11 +119,15 @@
 }
 
 .about{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 2vh;
-  width: 225vh;
-  height: 85vh;
+  width: 93.4vw;
+  height: 40vh;
   margin-top: 15vh;
   margin-bottom: 5vh;
+  margin-left: 1.3vw;
   display: flex;
   gap: 76vh;
   align-items: center;
@@ -125,15 +139,16 @@
 
 .about div p{
     margin-left: 3vh;
-    font-size: 6vh;
+    font-size: 2vw;
     font-family: 'Urbanist';
     font-weight: 500;
     color: navy;
 }
 
 .review{
-    margin-left: 40vh;
-    width: 900px;
+    display: flex;
+    align-self: center;
+    width: 40vw;
     overflow: hidden;
     border-radius: 10px;
 }
@@ -144,8 +159,8 @@
 }
 
 .slides img{
-    width: 600px;
-    height: 400px;
+    width: 15vw;
+    height: 45vh;
     object-fit: cover;
     margin-bottom: 5vh;
     margin-right: 20px;
@@ -162,21 +177,22 @@
 footer{
     background-color: #111;
     color: #eee;
-    padding: 40px 12px;
+    padding: 0.41vw;
     font-family: 'Lota', sans-serif;
+    font-size: 1.2vw;
 }
 
 .footer-content{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 1000px;
+    max-width: 100vw;
     margin: auto;
 }
 
 .footer-section{
     flex: 1;
-    min-width: 250px;
+    min-width: 92vw;
     margin: 10px;
 }
 
@@ -202,9 +218,9 @@ footer{
 .footer-bottom{
     text-align: center;
     margin-top: 30px;
-    border-top: 1px solid #333;
-    padding-top: 10px;
-    font-size: 14px;
+    border-top: 0.5vh solid #333;
+    padding-top: 1vh;
+    font-size: 1vw;
 }
 footer{
     position: relative;
