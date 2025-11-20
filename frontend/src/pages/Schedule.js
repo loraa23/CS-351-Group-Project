@@ -5,6 +5,8 @@ import ScheduleCalendar from "../components/ScheduleCalendar";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../styles/schedule.css"
+
+
 function Schedule() {
   const [events, setEvents] = useState([]);
   const location = useLocation();
@@ -25,6 +27,7 @@ function Schedule() {
           title: ev.title,
           start: new Date(ev.display_start),
           end: new Date(ev.display_end),
+          type: ev.type
         }));
         setEvents(formatted);
 
@@ -38,20 +41,30 @@ function Schedule() {
   }, []);
 
   return (
-    <div  className="SchedulePage" style={{ padding: "2rem" }}>
-      <div className="home-menu">
-          <ul>
-            <Link to="/Logout">
-              <li>Logout</li>
-            </Link>
-            
-            <li>Help</li>
-            <li>Schedule</li>
-            <li>About</li>
-          </ul>
-      </div>
-      <h1 id="scheduleTitle">Weekly Schedule</h1>
+    <div style={{
+        display: "flex",
+        flexDirection:"column",
+        justifyContent: "center", 
+        alignItems: "center",     
+        height: "110vh",
+        width: "200vw",           
+        boxSizing: "border-box",
+        padding: "20px",
+      }}>
+      <h>Weekly Schedule</h>
       <ScheduleCalendar events={events} />
+      <div className="row-container">
+        <Link to="/Logout">
+          <button id="back">Logout</button>
+        </Link>
+        <Link to="/Home">
+          <button id="back">Back</button>
+        </Link>
+        <Link to="/Matches">
+          <button id="back">Matches</button>
+        </Link>
+      </div>
+      
     </div>
   );
 }
