@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom'
+import Welcome from './pages/Welcome'
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Home from "./pages/Home"
@@ -25,6 +26,11 @@ function App() {
       <Routes>
         <Route path="/" 
           element={
+              <Welcome />
+          }
+          />
+        <Route path="/home" 
+          element={
             <ProtectedRoute>
               <Home />
             </ProtectedRoute> 
@@ -40,7 +46,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<RegisterAndLogout />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>
   );

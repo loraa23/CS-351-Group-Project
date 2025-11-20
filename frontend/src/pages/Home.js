@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import api from "../api";
 import { ACCESS_TOKEN } from "../constants";
-import "../styles/Transport.css";
+import "../styles/Home.css";
+import {ReactComponent as UploadIcon} from './Orion_upload.svg'
 
 function Home() {
   // schedule states
@@ -10,9 +11,33 @@ function Home() {
   const [schedules, setSchedules] = useState([]);
   const [selectedSchedule, setSelectedSchedule] = useState(null);
 
+  //Arrival Train stations
+  const chiTrainStns = {
+    OTC: {
+      UP_N:"Union Pacific North",
+      UP_NW:"Union Pacific Northwest",
+      UP_W:"Union Pacific West",
+    },
+
+    Union: {
+      BNSF: "BNSF",
+      HC:"Heritage Corridor",
+      MD_N: "Milwaukee District North",
+      MD_W: "Milwaukee District West",
+      NCS:"North Central Service",
+      SWS: "SouthWest Service",
+    },
+
+    Other: {
+      ME: "Metra Electric",
+      RI :"Rock Island"
+    }
+  }
+
   // transport selection states
-  const [trainLine, setTrainLine] = useState("");
-  const [station, setStation] = useState("");
+  const [arrivalTrainStation, setArrivalTrainStation] = useState("");
+  const [trainLine, setTrainLine] = useState("Not Selected");
+  const [station, setStation] = useState("Not Selected");
   const [stations, setStations] = useState([]);
 
   // fetch uploaded schedules
@@ -98,15 +123,36 @@ function Home() {
   return (
     <div className="page-container">
       {/* Upload Section */}
-      <section className="upload-section">
+      <div className="home-menu">
+          <ul>
+            <Link to="/Logout">
+              <li>Logout</li>
+            </Link>
+            
+            <li>Help</li>
+            <li>Schedule</li>
+            <li>About</li>
+          </ul>
+      </div>
+      <section className="upload">
         <h2>Upload Your UIC Schedule (.ics)</h2>
-        <form onSubmit={handleSubmit} className="form-container">
-          <div className="file-upload">
+        <form onSubmit={handleSubmit} className="upload-container">
+          <div className="upload-file">
             <input
               type="file"
               accept=".ics"
               onChange={(e) => setFile(e.target.files[0])}
+              style={{display: 'none'}}
+              id="Inputfile"
             />
+            <label
+              htmlFor="Inputfile"
+            >
+              <UploadIcon width="40" height="40"/>
+              
+            </label>
+            {file && <span id='fileSpan'><p>{file.name}</p></span>}
+            
             <button type="submit">Upload</button>
           </div>
         </form>
@@ -125,7 +171,7 @@ function Home() {
           <option value="">-- Select a schedule --</option>
           {schedules.map((s) => (
             <option key={s.id} value={s.id}>
-              {s.title}
+                {s.title}
             </option>
           ))}
         </select>
@@ -147,25 +193,26 @@ function Home() {
 
       {/* Transport Section */}
       <section className="transport-section">
-        <header className="Title">
-          <p id="subTitle">Choose Your Transportation Method</p>
-          <p>You can change this later in settings</p>
+        <header className="transport-Title">
+          <p>Select Your Train Stations</p>
+          <p id="transport-subTitle">You may change this later</p>
         </header>
         <div className="transportOptions">
+          <div className="arrivalTrainStation">
+            <select value={arrivalTrainStation} onChange={(e) => setArrivalTrainStation(e.target.value)}>
+              <option value={""}>Arrival Train Station </option>
+              <option value={"OTC"}>Ogilvie Transportation Station</option>
+              <option value={"Union"}>Chicago Union Station</option>
+              <option value={"Other"}>Other</option>
+            </select>
+          </div>
           <div className="trainline">
             <select value={trainLine} onChange={handleTrainChange}>
               <option value="">Train Line</option>
-              <option value="BNSF">BNSF</option>
-              <option value="HC">Heritage Corridor</option>
-              <option value="ME">Metra Electric</option>
-              <option value="MD-N">Milwaukee District North</option>
-              <option value="MD-W">Milwaukee District West</option>
-              <option value="NCS">North Central Service</option>
-              <option value="RI">Rock Island</option>
-              <option value="SWS">SouthWest Service</option>
-              <option value="UP-N">Union Pacific North</option>
-              <option value="UP-NW">Union Pacific Northwest</option>
-              <option value="UP-W">Union Pacific West</option>
+              {arrivalTrainStation && 
+                Object.entries(chiTrainStns[arrivalTrainStation]).map(([key, value]) =>(
+                  <option value={key}>{value}</option>
+                ))}
             </select>
           </div>
 
@@ -174,10 +221,17 @@ function Home() {
                 <option value="">Depature Station</option>
                 {stations.map((s, idx) => (
                     <option key={idx} value={s}>
-                    {s}
+                      {s}
                     </option>
                 ))}
             </select>
+            { (selectedSchedule?.title &&
+            <p>Schedule: {selectedSchedule?.title}</p>) ||
+            <p>Schedule: Not Selected</p>
+            }
+            <p>Train line: {trainLine}</p>
+            <p>Station: {station}</p>
+           
           </div>
         </div>
       </section>
@@ -192,7 +246,7 @@ function Home() {
             trainLine: trainLine,
             station: station}}
         >
-          <button id="next" disabled={!selectedSchedule || !trainLine || !station}>
+          <button id="generateSch" disabled={!selectedSchedule || !trainLine || !station}>
             Generate Schedule
           </button>
         </Link>

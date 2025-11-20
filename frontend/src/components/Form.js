@@ -21,9 +21,9 @@ function Form({ route, method }) {
             if (method === "login") {
                 localStorage.setItem(ACCESS_TOKEN, res.data.access)
                 localStorage.setItem(REFRESH_TOKEN, res.data.refresh)
-                navigate("/")
+                navigate("/home")
             } else {
-                navigate("/login")
+                navigate("/home")
             }
         } catch (error) {
             alert(error)
@@ -34,13 +34,17 @@ function Form({ route, method }) {
 
     return (
         <div className="App">
-            <header>
-                <div className="Title">
-                    <p>Welcome to UIC Campus Navigator</p>
-                    <p id="subTitle">Your one stop to all campus related inquiries</p>
-                </div>
-            </header>
-
+            <div className="image-carsole">
+                <div className="images">
+                        <img src="https://today.uic.edu/wp-content/uploads/2025/08/2025-convocation-drone-h-mh-6x4-1.png" alt="UIC"/>
+                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/681A2075_JF2024web.jpg"/>
+                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a3200_mh_websie.jpg" />
+                        <img src="https://today.uic.edu/wp-content/uploads/2025/09/2025-sparkfest-9263-6x4.jpg"/>
+                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/681A1533.campus.jpg"/>
+                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a5090_mh_websize.jpg"/>
+                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a6682_mh_websize.jpg"/>
+                    </div>
+            </div>
             <form onSubmit={handleSubmit} className="form-container">
                 <h1>{name}</h1>
                 <input
@@ -80,4 +84,4 @@ function Form({ route, method }) {
     )
 }
 
-export default Form
+export default Form;

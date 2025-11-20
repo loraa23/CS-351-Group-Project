@@ -1,7 +1,11 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from . import views
+from .views import CreateUserView
+
 
 urlpatterns = [
+    # path('api/', views.CreateUserView.as_view()),
     path("schedules/", views.ScheduleListCreate.as_view(), name="schedule-list"),
     path("schedules/delete/<int:pk>/", views.ScheduleDelete.as_view(), name="delete-schedule"),
     path("schedules/generate/", views.GenerateSchedule.as_view(), name="generate-schedule"),

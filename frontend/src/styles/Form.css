@@ -3,24 +3,29 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 50px auto;
+  margin: 1vw auto;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
+  width: 25vw;
+  height: 65vh;
+  font-size: 1.5vw;
 }
 
 .form-input {
-  width: 90%;
+  width: 20vw;
+  height: 8vh;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-size: 2vw;
 }
 
 .form-button {
-  width: 95%;
+  width: 20vw;
+  height: 8vh;
   padding: 10px;
   margin: 20px 0;
   background-color: #007bff;
@@ -29,6 +34,7 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  font-size: 2vw;
 }
 
 .form-button:hover {
@@ -55,4 +61,48 @@
 
 .form-link:hover {
   text-decoration: underline;
+}
+
+.App{
+  display: flex;
+  gap: 15vh;
+  align-items: center;
+  flex-direction: row;
+}
+
+.App img{
+  margin: auto;
+  border: 2vh solid white;
+  border-radius: 2vh;
+}
+
+.image-carsole{
+  display: flex;
+  align-items: center;
+  width: 130vh;
+  height: 100vh;
+  background-color: red;
+  overflow: hidden;
+}
+
+.images{
+    display: flex;
+    animation: moves 12s infinite;
+    
+}
+
+.images img{
+    width: 45vw;
+    height: 80vh;
+    object-fit: cover;
+    margin-bottom: 5vh;
+    margin-right: 20px;
+    border-radius: 2vh;
+}
+
+@keyframes moves {
+    0%, 25% {transform: translateX(0);}
+    33%, 58% {transform: translateX(-600px);}
+    66%, 91% {transform: translateX(-1200px);}
+    100% {transform: translateX(0);}
 }

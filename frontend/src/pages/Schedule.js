@@ -3,7 +3,8 @@ import api from "../api";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import ScheduleCalendar from "../components/ScheduleCalendar";
 import { useLocation } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import "../styles/schedule.css"
 function Schedule() {
   const [events, setEvents] = useState([]);
   const location = useLocation();
@@ -37,8 +38,19 @@ function Schedule() {
   }, []);
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Weekly Schedule</h1>
+    <div  className="SchedulePage" style={{ padding: "2rem" }}>
+      <div className="home-menu">
+          <ul>
+            <Link to="/Logout">
+              <li>Logout</li>
+            </Link>
+            
+            <li>Help</li>
+            <li>Schedule</li>
+            <li>About</li>
+          </ul>
+      </div>
+      <h1 id="scheduleTitle">Weekly Schedule</h1>
       <ScheduleCalendar events={events} />
     </div>
   );
