@@ -29,11 +29,29 @@
 
 
 .rbc-event {
-    background: #b92910 !important;
     color: #e6d9d9 !important;
     border-radius: 8px !important;
     margin: auto;
     
+}
+
+.commute-event {
+  background-color: #b92910 !important;
+  color: white;
+  /* border-radius: 5px; */
+  font-size: x-small;
+  
+}
+
+.default-event {
+  background-color: #0d64b0;
+  color: white;
+  /* border-radius: 10px; */
+  font-size: x-small;
+}
+
+.rbc-day-slot {
+  pointer-events: none !important;
 }
 
 .calendar-container{

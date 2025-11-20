@@ -7,25 +7,26 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 400vh;
     align-items: center;
     align-self: center;
 }
 
 .upload-container{
-    margin: 10vh;
+    margin: 5vh;
 }
 .upload{
     /* border: 1px solid black; */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: rgb(250, 217, 217);
     border-radius: 10vh;
-    width: 42vw;
-    height: 80vh;
+    width: 80vw;
+    height: 70vh;
     align-self: center;
     font-family: 'Lato', sans-serif;
     font-weight: 200;
-    padding: 0;
-    margin: 15vh;
+    padding: 10px;
+    margin: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,12 +56,16 @@
     list-style-type: none;
 }
 .upload ul li{
+    display: flex;
+    align-items: center;
     font-size: 3vh;
     font-weight: 400;
+    width: 100vh;
     color: rgb(8, 8, 8);
     background-color: pink;
-    padding: 1vh;
+    padding: 1vh 1.5vh;
     border-radius: 1vh;
+    justify-content: space-between;
 }
 
 .upload ul li button{
@@ -69,10 +74,11 @@
     border-radius: 2vh;
     background-color: brown;
     color: white;
-    width: 6vw;
-    height: 4vh;
+    width: 8vw;
+    height: 5vh;
     margin-top: 1vh;
     margin-bottom: 2vh;
+    margin-right: 1vh;
     cursor: pointer;
 }
 
@@ -85,9 +91,10 @@ select {
     border-radius: 2vh;
     font-family: 'Lato', sans-serif;
     font-size: 3vh;
-    width: 15vw;
+    width: 25vw;
     height: 5vh;
     cursor: pointer;
+    text-align: center;
 }
 
 select option{
@@ -99,7 +106,7 @@ select option{
 
 .upload-file{
     /* margin: 0; */
-    height: 20vh;
+    height: 15vh;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: white;
     border-radius: 2vh;
@@ -204,8 +211,8 @@ select option{
 
 .transport-section{
     /* border: 1px solid black; */
-    width: 42vw;
-    height: 70vh;
+    width: 80vw;
+    height: 40vh;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: rgb(250, 217, 217);
     border-radius: 10vh;

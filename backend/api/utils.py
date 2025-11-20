@@ -2,7 +2,7 @@ from icalendar import Calendar
 from datetime import datetime, date, timedelta, time
 from .rbtree import RedBlackTree
 from .metra import find_morning_commute, find_evening_commute
-from .unionfind import UnionFind
+from .unionFind import UnionFind
 from .models import Enrollment, Course, Availability, Student
 import os
 import re

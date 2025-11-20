@@ -11,33 +11,9 @@ function Home() {
   const [schedules, setSchedules] = useState([]);
   const [selectedSchedule, setSelectedSchedule] = useState(null);
 
-  //Arrival Train stations
-  const chiTrainStns = {
-    OTC: {
-      UP_N:"Union Pacific North",
-      UP_NW:"Union Pacific Northwest",
-      UP_W:"Union Pacific West",
-    },
-
-    Union: {
-      BNSF: "BNSF",
-      HC:"Heritage Corridor",
-      MD_N: "Milwaukee District North",
-      MD_W: "Milwaukee District West",
-      NCS:"North Central Service",
-      SWS: "SouthWest Service",
-    },
-
-    Other: {
-      ME: "Metra Electric",
-      RI :"Rock Island"
-    }
-  }
-
   // transport selection states
-  const [arrivalTrainStation, setArrivalTrainStation] = useState("");
-  const [trainLine, setTrainLine] = useState("Not Selected");
-  const [station, setStation] = useState("Not Selected");
+  const [trainLine, setTrainLine] = useState("");
+  const [station, setStation] = useState("");
   const [stations, setStations] = useState([]);
 
   // fetch uploaded schedules
@@ -123,7 +99,7 @@ function Home() {
   return (
     <div className="page-container">
       {/* Upload Section */}
-      <div className="home-menu">
+      {/* <div className="home-menu">
           <ul>
             <Link to="/Logout">
               <li>Logout</li>
@@ -133,7 +109,7 @@ function Home() {
             <li>Schedule</li>
             <li>About</li>
           </ul>
-      </div>
+      </div> */}
       <section className="upload">
         <h2>Upload Your UIC Schedule (.ics)</h2>
         <form onSubmit={handleSubmit} className="upload-container">
@@ -181,7 +157,7 @@ function Home() {
             <li key={s.id}>
               {s.title} — {new Date(s.uploaded_at).toLocaleString()}
               <button
-                style={{ marginLeft: "10px" }}
+                style={{ marginLeft: "15px"}}
                 onClick={() => handleDelete(s.id)}
               >
                 Delete
@@ -198,21 +174,20 @@ function Home() {
           <p id="transport-subTitle">You may change this later</p>
         </header>
         <div className="transportOptions">
-          <div className="arrivalTrainStation">
-            <select value={arrivalTrainStation} onChange={(e) => setArrivalTrainStation(e.target.value)}>
-              <option value={""}>Arrival Train Station </option>
-              <option value={"OTC"}>Ogilvie Transportation Station</option>
-              <option value={"Union"}>Chicago Union Station</option>
-              <option value={"Other"}>Other</option>
-            </select>
-          </div>
           <div className="trainline">
             <select value={trainLine} onChange={handleTrainChange}>
               <option value="">Train Line</option>
-              {arrivalTrainStation && 
-                Object.entries(chiTrainStns[arrivalTrainStation]).map(([key, value]) =>(
-                  <option value={key}>{value}</option>
-                ))}
+              <option value="BNSF">BNSF</option>
+              <option value="HC">Heritage Corridor</option>
+              <option value="ME">Metra Electric</option>
+              <option value="MD-N">Milwaukee District North</option>
+              <option value="MD-W">Milwaukee District West</option>
+              <option value="NCS">North Central Service</option>
+              <option value="RI">Rock Island</option>
+              <option value="SWS">SouthWest Service</option>
+              <option value="UP-N">Union Pacific North</option>
+              <option value="UP-NW">Union Pacific Northwest</option>
+              <option value="UP-W">Union Pacific West</option>
             </select>
           </div>
 
@@ -225,13 +200,6 @@ function Home() {
                     </option>
                 ))}
             </select>
-            { (selectedSchedule?.title &&
-            <p>Schedule: {selectedSchedule?.title}</p>) ||
-            <p>Schedule: Not Selected</p>
-            }
-            <p>Train line: {trainLine}</p>
-            <p>Station: {station}</p>
-           
           </div>
         </div>
       </section>
