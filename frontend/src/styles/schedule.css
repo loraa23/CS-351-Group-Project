@@ -29,7 +29,6 @@
 
 
 .rbc-event {
-    color: #e6d9d9 !important;
     border-radius: 8px !important;
     margin: auto;
     
@@ -37,6 +36,7 @@
 
 .commute-event {
   background-color: #b92910 !important;
+  /* background-color: rgb(168, 48, 48) !important; */
   color: white;
   /* border-radius: 5px; */
   font-size: x-small;
@@ -44,7 +44,8 @@
 }
 
 .default-event {
-  background-color: #0d64b0;
+  /* background-color: #0d64b0; */
+  background-color: #3174ad;
   color: white;
   /* border-radius: 10px; */
   font-size: x-small;
