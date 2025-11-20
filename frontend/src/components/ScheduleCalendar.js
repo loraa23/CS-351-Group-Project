@@ -2,12 +2,12 @@ import React from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-
+import "../styles/schedule.css" 
 const localizer = momentLocalizer(moment);
 
 function ScheduleCalendar({ events }) {
   return (
-    <div className="calendar-container" style={{ height: "80vh", margin: "20px" }}>
+    <div className="calendar-container">
       <Calendar
         localizer={localizer}
         events={events}

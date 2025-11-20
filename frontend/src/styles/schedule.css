@@ -1,0 +1,63 @@
+.calendar-container .rbc-header{
+   font-family: 'Times New Roman', Times, serif;
+   font-size: 2vw !important;
+   /* border: 1px solid black; */
+   min-height: 7vh;
+   font-weight: 300;
+    background: #ece2e2
+}
+
+.calendar-container .rbc-time-view,
+.calendar-container .rbc-time-content,
+.calendar-container .rbc-day-slot,
+.calendar-container .rbc-timeslot-group,
+.calendar-container .rbc-time-gutter,
+.calendar-container .rbc-time-header,
+.calendar-container .rbc-header {
+  border-radius: 5vh;
+  padding: 1vw;
+  background-color: #f3f6ff !important;  /* your color */
+}
+
+
+/* hide all-day row completely */
+.rbc-allday-cell,
+.rbc-allday-events,
+.rbc-time-header .rbc-allday-header {
+  display: none !important;
+}
+
+
+.rbc-event {
+    background: #b92910 !important;
+    color: #e6d9d9 !important;
+    border-radius: 8px !important;
+    margin: auto;
+    
+}
+
+.calendar-container{
+    border-radius: 3vh;
+    font-family: 'Urbanist';
+    font-weight: 500;
+    font-size: 1vw;
+    min-width: 12vw;
+    width:90vw;
+    height: 100vh;
+    background-color: #f3c1b8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    padding: 2vh;
+}
+
+.schedulePage{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#scheduleTitle{
+    font-family: 'Lato';
+    font-weight: 700;
+    margin-top: 5vh;
+}
