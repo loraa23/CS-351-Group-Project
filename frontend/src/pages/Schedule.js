@@ -3,6 +3,7 @@ import api from "../api";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import ScheduleCalendar from "../components/ScheduleCalendar";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Schedule() {
   const [events, setEvents] = useState([]);
@@ -24,6 +25,7 @@ function Schedule() {
           title: ev.title,
           start: new Date(ev.display_start),
           end: new Date(ev.display_end),
+          type: ev.type
         }));
         setEvents(formatted);
 
@@ -37,9 +39,30 @@ function Schedule() {
   }, []);
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Weekly Schedule</h1>
+    <div style={{
+        display: "flex",
+        flexDirection:"column",
+        justifyContent: "center", 
+        alignItems: "center",     
+        height: "110vh",
+        width: "200vw",           
+        boxSizing: "border-box",
+        padding: "20px",
+      }}>
+      <h>Weekly Schedule</h>
       <ScheduleCalendar events={events} />
+      <div className="row-container">
+        <Link to="/Logout">
+          <button id="back">Logout</button>
+        </Link>
+        <Link to="/Home">
+          <button id="back">Back</button>
+        </Link>
+        <Link to="/Matches">
+          <button id="back">Matches!</button>
+        </Link>
+      </div>
+      
     </div>
   );
 }

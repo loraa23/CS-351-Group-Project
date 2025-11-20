@@ -6,6 +6,7 @@ import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import ProtectedRoute from './components/ProtectedRoute'
 import Schedule from "./pages/Schedule"
+import Matches from "./pages/Matches"
 import './styles/App.css';
 
 function Logout() {
@@ -40,6 +41,13 @@ function App() {
           element={
             <ProtectedRoute>
               <Schedule />
+            </ProtectedRoute> 
+          } 
+        />
+        <Route path="/matches" 
+          element={
+            <ProtectedRoute>
+              <Matches />
             </ProtectedRoute> 
           } 
         />
