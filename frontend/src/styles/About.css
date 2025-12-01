@@ -1,0 +1,117 @@
+
+.about-menu{
+    /* border: 1px solid green; */
+    top: 0;
+    /* left: 0; */
+    position: fixed;
+    margin: auto;
+    /* margin-bottom: 20vh; */
+    padding: 0;
+}
+
+.about-menu{
+    min-width: 5vw;
+    max-width: fit-content;
+    min-height: 15vh;
+    max-height: fit-content;
+    
+}
+.about-menu ul{
+   border-radius: 10px;
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: brown;
+}
+
+.about-menu ul li{
+    font-weight: 100;
+    font-size: 2vw;
+    font-family: 'Times New Roman', Times, serif;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1vh 1vh;
+    float: left;
+}
+
+.about-menu ul li:hover{
+    background-color: rgb(182, 94, 94);
+}
+
+h1{
+    font-family: 'Lato';
+    font-size: 4vw;
+    font-weight: 700;
+}
+
+h2{
+    font-family: 'Lato';
+    font-size: 2vw;
+    font-weight: 500;
+}
+
+h3{
+    font-family: 'Lato';
+    font-size: 1vw;
+}
+
+p{
+    font-family: 'Lato';
+    font-size: 1.5vw;
+}
+.calendar-info{
+    border-radius: 10px;
+    padding: 2vh;
+    margin: 5vh 9vh;
+    background-color: rgb(206, 165, 165);
+    /* color: white; */
+}
+
+.calendar-info h1{
+    font-size: 5vw;
+}
+.calendar-info h2{
+    /* border: 1px solid black; */
+    margin: 0 10vw;
+    font-size: 1.5vw;
+    font-weight: 700;
+}
+
+.calendar-info img{
+    margin: 1vh;
+    max-width: fit-content;
+    min-width: 42vw;
+    max-height: fit-content;
+    min-height: 42vh;
+}
+
+.main{
+    background-color: rgb(233, 217, 217);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+.how-to{
+    margin: 5vh 9vh;
+    background-color: rgb(110, 14, 30);
+    color: white;
+    border-radius: 2vw;
+    padding: 2vw;
+}
+
+.how-to a{
+    text-decoration: underline;
+    color: rgb(177, 176, 176);
+
+}
+
+.matches-info{
+    margin: 5vh 9vh;
+    background-color:  rgb(206, 165, 165);
+    border-radius: 10px;
+    padding: 2vh;
+}

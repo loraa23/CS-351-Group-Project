@@ -73,10 +73,29 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin: auto;
+    align-self: center;
 }
 
 #scheduleTitle{
     font-family: 'Lato';
     font-weight: 700;
-    margin-top: 5vh;
+    margin: 5vh;
+}
+
+.Schedulemenu{
+  /* border: 1px solid black; */
+  /* max-width: fit-content; */
+  /* max-height: fit-content; */
+  position: relative;
+  overflow-wrap: hidden;
+}
+
+.Schedulemenu ul{
+   border-radius: 10px;
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: brown;
 }

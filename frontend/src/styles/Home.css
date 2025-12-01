@@ -180,9 +180,10 @@ select option{
 }
 
 .home-menu{
-    max-width: 100vw;
-    width: 40vw;
-    height: 15vh;
+    min-width: fit-content;
+    max-width: 40vw;
+    min-height: 10vh;
+    max-height: 15vh;
     
 }
 .home-menu ul{
@@ -211,8 +212,11 @@ select option{
 
 .transport-section{
     /* border: 1px solid black; */
-    width: 80vw;
-    height: 40vh;
+    margin: auto;
+    min-width: 80vw;
+    max-width: calc(fit-content) + 80vw;
+    min-height: 40vh;  
+    max-height: fit-content;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: rgb(250, 217, 217);
     border-radius: 10vh;
@@ -266,8 +270,10 @@ nav{
     border-radius: 1vh;
     background-color: brown;
     color: white;
-    width: 9.2vw;
-    height: 8vh;
+    min-width: 9.2vw;
+    max-width: fit-content;
+    min-height: 8vh;
+    max-height: fit-content;
     margin: 1.5vh;
     cursor: pointer;
 }
@@ -287,4 +293,61 @@ nav{
 #schedule-title{
     font-size: 1vw;
     color: navy;
+}
+
+#upload-icon{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+    border: 2px dotted rgb(47, 47, 97);
+}
+
+.trainline{
+    /* max-width: fit-content; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    padding-right: 0;
+    /* border: 1px solid black; */
+}
+
+.stations{
+    max-width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    padding-right: 0;
+}
+
+.trainline p{
+    font-family: 'Lato';
+}
+
+.stations p{
+    font-family: 'Lato';
+}
+
+.arrivalTrainStation{
+    max-width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    padding-right: 0;
+}
+
+.arrivalTrainStation p{
+    font-family: 'Lato';
+}
+
+.transportOptions{
+    /* background-color: aliceblue; */
+    margin: auto;
+    padding: 0;
+    max-width: fit-content;
+    max-height: fit-content;
+    /* border: 1px solid rgb(10, 10, 10); */
 }

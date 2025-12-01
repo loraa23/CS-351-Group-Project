@@ -11,7 +11,33 @@ function Home() {
   const [schedules, setSchedules] = useState([]);
   const [selectedSchedule, setSelectedSchedule] = useState(null);
 
+
+  //Arrival Train Stations
+  //Arrival Train stations
+  const chiTrainStns = {
+    OTC: {
+      'UP-N':"Union Pacific North",
+      'UP-NW':"Union Pacific Northwest",
+      'UP-W':"Union Pacific West",
+    },
+
+    Union: {
+      'BNSF': "BNSF",
+      'HC':"Heritage Corridor",
+      'MD-N': "Milwaukee District North",
+      'MD-W': "Milwaukee District West",
+      'NCS':"North Central Service",
+      'SWS': "SouthWest Service",
+    },
+
+    Other: {
+      'ME': "Metra Electric",
+      'RI' :"Rock Island"
+    }
+  }
+
   // transport selection states
+   const [arrivalTrainStation, setArrivalTrainStation] = useState("");
   const [trainLine, setTrainLine] = useState("");
   const [station, setStation] = useState("");
   const [stations, setStations] = useState([]);
@@ -99,17 +125,17 @@ function Home() {
   return (
     <div className="page-container">
       {/* Upload Section */}
-      {/* <div className="home-menu">
+      <div className="home-menu">
           <ul>
             <Link to="/Logout">
               <li>Logout</li>
             </Link>
+            <Link to="/About">
+              <li>About</li>
+            </Link>
             
-            <li>Help</li>
-            <li>Schedule</li>
-            <li>About</li>
           </ul>
-      </div> */}
+      </div>
       <section className="upload">
         <h2>Upload Your UIC Schedule (.ics)</h2>
         <form onSubmit={handleSubmit} className="upload-container">
@@ -123,6 +149,7 @@ function Home() {
             />
             <label
               htmlFor="Inputfile"
+              id="upload-icon"
             >
               <UploadIcon width="40" height="40"/>
               
@@ -174,24 +201,29 @@ function Home() {
           <p id="transport-subTitle">You may change this later</p>
         </header>
         <div className="transportOptions">
+          <div className="arrivalTrainStation">
+            <p>Chicago Arrival Station:</p>
+            <select value={arrivalTrainStation} onChange={(e) => setArrivalTrainStation(e.target.value)}>
+              <option value={""}>Arrival Train Station </option>
+              <option value={"OTC"}>Ogilvie Transportation Station</option>
+              <option value={"Union"}>Chicago Union Station</option>
+              <option value={"Other"}>Other</option>
+            </select>
+          </div>
           <div className="trainline">
+            <p>Train Line: </p>
             <select value={trainLine} onChange={handleTrainChange}>
+              
               <option value="">Train Line</option>
-              <option value="BNSF">BNSF</option>
-              <option value="HC">Heritage Corridor</option>
-              <option value="ME">Metra Electric</option>
-              <option value="MD-N">Milwaukee District North</option>
-              <option value="MD-W">Milwaukee District West</option>
-              <option value="NCS">North Central Service</option>
-              <option value="RI">Rock Island</option>
-              <option value="SWS">SouthWest Service</option>
-              <option value="UP-N">Union Pacific North</option>
-              <option value="UP-NW">Union Pacific Northwest</option>
-              <option value="UP-W">Union Pacific West</option>
+              {arrivalTrainStation && 
+                Object.entries(chiTrainStns[arrivalTrainStation]).map(([key, value]) =>(
+                  <option value={key}>{value}</option>
+                ))}
             </select>
           </div>
 
           <div className="stations">
+            <p>Departure Stations: </p>
             <select value={station} onChange={handleStationChange}>
                 <option value="">Depature Station</option>
                 {stations.map((s, idx) => (
@@ -206,9 +238,6 @@ function Home() {
 
       {/* Navigation */}
       <nav>
-        <Link to="/Logout">
-          <button id="back">Logout</button>
-        </Link>
         <Link to="/Schedule" state={{ 
             scheduleId: selectedSchedule?.id, 
             trainLine: trainLine,

@@ -27,7 +27,7 @@ function Schedule() {
           title: ev.title,
           start: new Date(ev.display_start),
           end: new Date(ev.display_end),
-          type: ev.type
+          // type: ev.type
         }));
         setEvents(formatted);
 
@@ -41,19 +41,19 @@ function Schedule() {
   }, []);
 
   return (
-    <div style={{
-        display: "flex",
-        flexDirection:"column",
-        justifyContent: "center", 
-        alignItems: "center",     
-        height: "110vh",
-        width: "200vw",           
-        boxSizing: "border-box",
-        padding: "20px",
+    <div className= "SchedulePage" style={{
+        // display: "flex",
+        // flexDirection:"column",
+        // justifyContent: "center", 
+        // alignItems: "center",     
+        // height: "110vh",
+        // width: "200vw",           
+        // boxSizing: "border-box",
+        // padding: "20px",
+        padding: "2rem"
       }}>
-      <h>Weekly Schedule</h>
-      <ScheduleCalendar events={events} />
-      <div className="row-container">
+      
+      <div className="Schedulemenu">
         <Link to="/Logout">
           <button id="back">Logout</button>
         </Link>
@@ -64,7 +64,8 @@ function Schedule() {
           <button id="back">Matches</button>
         </Link>
       </div>
-      
+      <h1 id="scheduleTitle">Weekly Schedule</h1>
+      <ScheduleCalendar events={events} />
     </div>
   );
 }

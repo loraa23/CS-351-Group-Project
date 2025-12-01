@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Welcome(){
     return <div className="Welcome">
         <header>
-            <div className="menu">
+            {/* <div className="menu">
                 <ul>
                     <Link to="/login">
                         <li>Login</li>
@@ -14,7 +14,7 @@ function Welcome(){
                     </Link>
                     
                 </ul>
-            </div>
+            </div> */}
                 <div className="Title">
                     <div className="content">
                         <p>Welcome to UIC Campus Navigator</p>
@@ -32,7 +32,7 @@ function Welcome(){
                         </div>
                     </div>    
 
-                    <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a3908_mh_websize.jpg" width="550" height="400"/>  
+                    <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a3908_mh_websize.jpg" width="550" height="400" alt="UIC"/>  
                 </div>
                 <div className="about">
                     <div>
@@ -47,13 +47,13 @@ function Welcome(){
                 </div>
                 <div className="review">
                     <div className="slides">
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" />
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg"/>
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" />
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg"/>
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg"/>
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg"/>
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg"/>
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" alt="UIC" />
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" alt="UIC"/>
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg"  alt="UIC"/>
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" alt="UIC"/>
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" alt="UIC"/>
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" alt="UIC"/>
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" alt="UIC"/>
                     </div>
                 </div>
         </header>

@@ -37,12 +37,12 @@ function Form({ route, method }) {
             <div className="image-carsole">
                 <div className="images">
                         <img src="https://today.uic.edu/wp-content/uploads/2025/08/2025-convocation-drone-h-mh-6x4-1.png" alt="UIC"/>
-                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/681A2075_JF2024web.jpg"/>
-                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a3200_mh_websie.jpg" />
-                        <img src="https://today.uic.edu/wp-content/uploads/2025/09/2025-sparkfest-9263-6x4.jpg"/>
-                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/681A1533.campus.jpg"/>
-                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a5090_mh_websize.jpg"/>
-                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a6682_mh_websize.jpg"/>
+                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/681A2075_JF2024web.jpg" alt="UIC"/>
+                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a3200_mh_websie.jpg" alt="UIC"/>
+                        <img src="https://today.uic.edu/wp-content/uploads/2025/09/2025-sparkfest-9263-6x4.jpg" alt="UIC"/>
+                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/681A1533.campus.jpg" alt="UIC"/>
+                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a5090_mh_websize.jpg" alt="UIC"/>
+                        <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a6682_mh_websize.jpg" alt="UIC"/>
                     </div>
             </div>
             <form onSubmit={handleSubmit} className="form-container">
