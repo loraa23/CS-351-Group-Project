@@ -1,176 +1,219 @@
-# Logistics  
+# UIC Commuter & Schedule Optimization App
 
-**Q1:** At what time in the week would your group be available to meet online?  
-
-*Our weekly meeting will be Monday Afteroon at 4pm-5pm.*  
-**Answer:**  
-*We will keep an open discourse on discord and follow up in our weekly meetings.*  
-*Our weekly meeting will be Monday 4pm-5pm.*  
+A full stack web application designed to help UIC students better manage their academic schedules, optimize commute planning using CTA/Metra data, and connect with peers who have similar class times for potential study groups.
 
 ---
 
-# Timeline: Weekly Meeting Goals  
+# Overview
 
-**Q2:** What is your goals that your group want to achieve in each weekly meeting?  
-**Answer:**  
-*Prior to 10/02: Weekly Meeting we will plan out some preliminary info/idea for the project itself ahead of the scheduled meeting and work on completing Milestone 2.*  
+UIC is a commuter campus, and students often struggle to choose class times that align with train schedules and find peers with matching free time. This application streamlines that experience by providing:
 
-*During week of 10/07: Finalise details of the track, and the technologies to be used. Hava a completed wireframe and a working figma prototype.*  
-
-*During week of 10/14: Have a file tree ready and start the implementation of the wireframe. By the end of the week the rough outline is ready.*
-
-*During week of 10/21 - 11/4: Have most features implemented and work out the bugs.*
-
-*Prior to 11/24: Finish deployment and work out any last kinks and clean up code. Visit office hours to get guidance if the progress feels weak.*  
- 
-*During our weekly meetings, we want to focus on making steady progress together. Our main goals are to plan and build the core parts of the project, set up the database, and make sure the backend connects smoothly with the frontend. We’ll also use this time to test features as we create them, fix any issues that come up, and check in on each other so we stay on track for upcoming milestones.*  
+- Automatic schedule parsing from a `.ics` calendar file  
+- Chronologically sorted class schedules  
+- Customized CTA/Metra commute suggestions  
+- Study group recommendations based on overlapping schedules  
+- A clean and intuitive user interface built in React  
 
 ---
 
-# Communication  
+# Features
 
-**Q3a:** How can your group communicate when doing the Full Stack Group Project?  
-**Q3b:** What are the usernames of each group member on that platform?  
-**Q3c:** What is your group’s expected response time to messages?  
-
-*We will being using Discord for communication*
-
-Usernames:
-
-Lora - appleroox
-
-Rishi - rnov2001
-
-Hibatul - hm05633
-
-*Our expected response time will be within 24 hours.*
-
----
-
-# Norms  
-
-**Q4a:** How will your group handle situations when there is conflict in your group? 
-
-If there is conflict in the group, we can create a poll in the channel to resolve any disputes. We will, however, make sure everyone has a chance to explain their side so that every point of view is equally considered.
+### Schedule Upload & Parsing
+- Upload your UIC schedule as a `.ics` file  
+- The backend parses class events and stores them in the database  
+- Events are automatically sorted by time using a Red-Black Tree
+- The backend uses a custom parser to read each VEVENT block from the .ics file and convert it into an Event model instance.
 
 
-**Q4b:** How will your group handle situations when a member is not contributing enough?  
+### Commute Optimization
+- Integrates with **Metra GTFS API**  
+- Integrates with **CTA API**  
+- Suggests best train/bus options based on class start and end times  
 
-If a member is not contributing enough, we will check in on them to see what the issue is, and offer support to a reasonable extent. If the problem continues, we will contact the instructor. 
+### Study Partner Matching
+- Uses a Union-Find (Disjoint Set) structure  
+- Groups students with similar class schedules or overlapping free time  
+- Frontend displays your matching study group cluster  
+
+### Authentication
+- Register and login securely  
+- Each user manages their own schedule  
+- Passwords are stored using hashing  
 
 ---
 
-# Roles  
+# Tech Stack
 
-**Q5:** How will your group divide your role in the Group Project?  
- 
-Lora - Project Lead
-Rishi - Backend
-Hibatul - Frontend
----
+### Frontend
+- React  
+- JavaScript  
+- CSS  
 
-# Tech Stacks
+### Backend
+- Django
+- SQLite  
 
-**Q6:** Which tech stacks will your group use? (Django + React or Flask + React)
+### APIs
+- Metra GTFS API  
+- CTA API  
 
-We will be using Django + React tech stack
-
----
-# Full Stack Group Project Track  
----
-
-# Track 1: Tackling Generative AI Consequences
-**Problem 1:** 
-
-*LLM's are resource intensive and people are concerned about it impact on the environment. " Each time a model is used, perhaps by an individual asking ChatGPT to summarize an email, the computing hardware that performs those operations consumes energy. Researchers have estimated that a ChatGPT query consumes about five times more electricity than a simple web search." - MIT (https://news.mit.edu/2025/explained-generative-ai-environmental-impact-0117)*
-
-**Solution 1:** 
-
-*We can build an app that educates users on how impactful their use of LLM's are. This will be done by allowing the user to input a potential prompt that they would normally use on an LLM, and tell them how resource intensive that particular prompt is. We can make it interactive by showing graphics that compare it to other things with similar energy usage.*
+### Advanced Data Structures
+- **Red-Black Tree** for event ordering  
+- **Union-Find (Disjoint Set)** for study group clustering  
 
 ---
 
-# Track 2: Technology for Public Goods 
+# System Architecture
+- frontend/    → React interface  
+- backend/     → Django backend  
+- api/         → REST API endpoints  
+- models.py    → Schedule, Event, StudentSchedule  
+- services.py  → Event sorting + study group logic  
+- rbtree.py    → Red-Black Tree  
+- unionfind.py → Union-Find  
+- myproject/   → Django settings  
 
-**Problem 2:**
+React communicates with Django via REST API calls.
+Backend handles file processing, time sorting, commute logic, and study group clustering.
 
-*As a commuter at UIC, sometimes it can be difficult to pick class times that fit well with metras schedule. Sometimes I end up having to wait another hour for the next train because of when my class ends.*
+---
 
-**Solution 2:** 
+# Backend Setup (Django)
+ 1. Navigate to the backend directory
+    - cd backend
+ 2. Create a virtual environment
+    - python -m venv venv
+ 3. Activate it
+    - Windows
+        - venv\Scripts\activate
+    - Linux
+        - source venv/bin/activate
+ 4. Install dependencies
+    - pip install -r requirements.txt
+ 5. Apply migrations
+    - python manage.py migrate
+ 6. Run the backend server
+    - python manage.py runserver
 
-*Develop an app where you can input your uic schedule, and it will output suggested Metra trains to take that optimizes commute time while making sure you get to school on time. Could offer an option that does the opposite where you input your train, and it will suggest UIC class times based on UIC class structure. This makes sure to minimize commute time, so you're not waiting a long time for the next train after class.*
+Backend runs at:
+http://127.0.0.1:8000
 
-**Problem 3:** 
+# Frontend Setup (React)
+ 1. Go to the frontend directory
+    - cd frontend
+2. Install dependencies
+   - npm install
+3. Start React development server
+   - npm start
 
-*As an incoming student or transfer student, it can be quite hard to navigate the UIC campus and locate certain rooms. As UIC is a manily a commuter school, many new students might find it tricky to navigate public transportation.*
+Frontend runs at:
+http://localhost:3000
 
-**Solution 3:**  
+---
 
-*Make a web app that helps students determine where their classes are located, help them familiarize themselves with CTA trains and buses. Students will be able to enter the station closest to them and it will determine their commute time and which trains they have to take, and what busses to take from Ogilvie Transportation Center or Union Station.*
+# Running the Full Application
 
-# Track 3: Creative Coding and Cultural Expression
+In two separate terminals:
 
-**Idea - Story - Inspiration 4:**
+### Terminal 1 — Backend
+cd backend
+venv\Scripts\activate
+python manage.py runserver
 
-*When a major life change happens, many people fear the future and this leads to anxiety, gradually they get used to navigating their current life, finding patterns and routines that help them settle their anxities and exposure leads to less fear.*
+### Terminal 2 — Frontend
+cd frontend
+npm start
 
-**Implementation 4:** 
+The React frontend will communicate with Django through:
+http://127.0.0.1:8000/api/
 
-*We build a website or app where everytime you click anywhere on the screen, the layout changes, simulating anxiety/uncertainty. Eventually the user will find a pattern to the layout changes. The goal is to make a puzzle-like web app that demonstrates the state of the mind during major life changes, and the end goal is to show that things get better gradually.*
+---
 
-**Idea - Story - Inspiration 5:**
+# Data Models
 
-*"Everywhere at the End of Time" by The Caretaker is a musical project that attempts to capture the progression of dementia through sound. Instead of music, we will make a web app that simulates Alzheimer's disease. Alzheimer's known to gradually erode memory and recognition, which can terrifying and isolation. Trough this web app, we can use creative UI elements to showcase the 'decays' that occur over time and help family members of Alzheimer's patients better understand the struggle their loved ones go through, while also educating about the stages and effects of Alzheimer's.*
+### **Schedule**
+Stores uploaded `.ics` files and connects them to a user.
 
-**Implementation 5:**
+### **Event**
+Represents individual class blocks parsed from a user’s schedule.
 
-*The project would take the form of a website or app that begins as a seemingly normal interface (clean, orderly, filled with content). As time passes or as the user interacts, the interface starts to glitch: text fragments disappear, images blur or distort, navigation breaks down. Eventually, the site degrades into a black, empty screen, symbolizing advanced Alzheimer’s. The app will also reveal short facts or narratives about Alzheimer’s at each stage of decay.*
+### **StudentSchedule**
+Links a user to their parsed list of Event objects for analysis and matching.
 
-# Idea Finalization
+---
 
-**From 5 project ideas you have above, please choose one of the project that you are going with for the rest of the semester. Explain why you are going with that project**
+# Advanced Data Structures
 
-*We are going with Track 2: Problem 3. We are going with this track since it helps the community we are a part of and could potentially be scaled and developed further.*
+## Red-Black Tree (Event Ordering)
+Used to keep all class events sorted chronologically.  
+Every time an event is parsed, it is inserted into the Red-Black Tree.  
+The tree ensures efficient sorting and retrieval for schedule display.
 
-# Extra Credit (Only do this if you are done with Idea Finalization)
+We selected Red-Black Tree because it guarantees O(log n) insertion and retrieval, which is ideal for sorting events as soon as they are parsed.
 
-## Database Design
+## Union-Find (Study Group Matching)
+Used to group students who share similar schedules or overlapping free time.  
+Each student is treated as a node; overlapping schedules trigger unions.  
+The resulting sets represent study groups with compatible availability.
 
-**Q1: What database are you using for your project (SQLite, PostgreSQL, noSQL, MongoDB,...), and why do you choose it?**
+We selected Union-Find because it efficiently groups users with similar schedules using near-constant-time operations.
 
-We plan to use SQLite for this project. Since this app will be rather small-scale, SQLite is sufficient since it's lightweight and the database can be stored on a single file locally.
+---
 
-**Q2: How will database be helpful to your project? How will you design your database to support your application features?**
+# API Endpoints
 
-The database will store information about the user's schedule as well as CTA and Metra schedules. This will include tables that stores the student's account information, UIC buildings and rooms, transit routes, and commute times. 
+### **POST /api/upload-schedule/**
+Uploads and parses a `.ics` schedule file for the authenticated user.
 
-## Third-Party API Integration
+### **GET /api/events/**
+Returns all parsed events sorted in chronological order.
 
-**Q3: Which third-party API(s) will you integrate into your project? What data will you pull from the API(s), and how will you use it in your application?**
+### **GET /api/study-groups/**
+Returns groups of students formed using the Union-Find data structure.
 
-*The third-party API(s) we will use are Metra's API and CTA API to get bus and train information*
+### **POST /api/register/**
+Registers a new user account.
 
-**Q4: Does your API key has limitations such as rate limits or downtime? How are you going to deal with that?**
+### **POST /api/login/**
+Authenticates an existing user.
 
-*Some limitations include downtime, to ensure feasilbe use, we will have a local database with information about the areas closest to UIC.*
+---
 
-## Authentication and Security
+# How the Application Works
 
-**Q5: What authentication method will you use (e.g., username/password, OAuth, JWT)?**
+### 1. Upload a `.ics` schedule  
+File is saved and parsed into individual Event objects.
 
-username/password
+### 2. Events inserted into a Red-Black Tree  
+The tree sorts events by time to build a chronological schedule.
 
-**Q6: How will you store and protect sensitive user data (e.g., passwords, tokens)?**
+### 3. Frontend retrieves sorted events  
+React displays the user’s full schedule.
 
-We plan to implement usernames and passwords because of its simplicity and because the app won't store any highly sensitive information about the student, so more secure methods aren't needed. However, we will store the passwords using a hashing algorithm to ensure security. 
+### 4. Commute suggestions generated  
+Using CTA and Metra APIs for real-time or scheduled data.
 
-## Deployment
+### 5. Study group matching  
+Union-Find clusters students with similar schedules.
 
-**Q7: Where will you deploy your project (e.g., Heroku, AWS, Render)? How will you manage environment variables and secrets during deployment?**
+---
 
-We plan to use Heroku to deploy our project.
-We will use a .env file to manage environment variables and secrets, using .gitignore to make sure it's not stored on publicly on github. 
+# Third-Party API Usage
 
-**Q8: How will you ensure your deployment is reliable and easy to update?**
+### Metra GTFS API
+Provides train schedules and real-time commuter rail data.
 
-We will use git-based deployment so that pushing to the main branch automatically redeploys the app.
+### CTA Bus/Train API
+Provides transportation options from Union Station/Ogilvie to UIC.
+
+Local fallback data ensures functionality during API downtime.
+
+---
+
+# Team Members
+
+**Lora** — Project Lead
+**Rishi** — Backend
+**Hibatul** — Frontend 
+
+---
