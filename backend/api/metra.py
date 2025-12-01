@@ -4,6 +4,7 @@ import zipfile
 import requests
 import pandas as pd
 from datetime import datetime, time, timedelta
+from rest_framework.response import Response
 
 STATIC_GTFS_URL = "https://schedules.metrarail.com/gtfs/schedule.zip"
 STATIC_GTFS_DIR = "metra_gtfs"
@@ -57,7 +58,13 @@ def parse_gtfs_time(gtfs_str):
 
     h, m, s = map(int, gtfs_str.split(":"))
     h = h % 24  # Handle 24:xx or 25:xx next-day times
-    return time(hour=h, minute=m, second=s)
+    try:
+        return time(hour=h, minute=m, second=s)
+    except Exception as e:
+         return Response(
+                {"error": f"Failed to parse schedule: {e}"},
+                status=500
+            )
 
 ICS_DAY_TO_GTFS = {
     "MO": "monday",

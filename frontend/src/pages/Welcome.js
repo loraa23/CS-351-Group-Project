@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Welcome(){
     return <div className="Welcome">
         <header>
-            <div className="menu">
+            {/* <div className="menu">
                 <ul>
                     <Link to="/login">
                         <li>Login</li>
@@ -14,7 +14,7 @@ function Welcome(){
                     </Link>
                     
                 </ul>
-            </div>
+            </div> */}
                 <div className="Title">
                     <div className="content">
                         <p>Welcome to UIC Campus Navigator</p>

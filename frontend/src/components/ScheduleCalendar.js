@@ -2,6 +2,7 @@ import React from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import "../styles/schedule.css";
 
 const localizer = momentLocalizer(moment);
 
@@ -38,11 +39,11 @@ function ScheduleCalendar({ events }) {
     //     padding: "20px",
     //   }}>
     //   <h>Weekly Schedule</h>
+    <div className="calendar-container">
       <Calendar
         localizer={localizer}
         events={events}
         eventPropGetter={eventStyleGetter}
-        style={{ height: "100vh", width: "150vh", margin: "20px" }}
         startAccessor="start"
         endAccessor="end"
         views={['week']}
@@ -59,7 +60,7 @@ function ScheduleCalendar({ events }) {
         max={new Date(2025, 0, 6, 21, 0)}
         components={{ event: CustomEvent }}
       />
-    // </div>
+    </div>
   );
 }
 

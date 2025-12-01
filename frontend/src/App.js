@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound"
 import ProtectedRoute from './components/ProtectedRoute'
 import Schedule from "./pages/Schedule"
 import Matches from "./pages/Matches"
+import About from "./pages/About"
 import './styles/App.css';
 
 function Logout() {
@@ -50,6 +51,13 @@ function App() {
               <Matches />
             </ProtectedRoute> 
           } 
+        />
+        <Route path="/about"
+          element={
+            <ProtectedRoute>
+              <About />
+            </ProtectedRoute>
+          }
         />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
