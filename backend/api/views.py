@@ -53,10 +53,19 @@ class GenerateSchedule(APIView):
         station = request.data.get("station")
         user = request.user
 
-        # Get the latest uploaded schedule
-        schedule = Schedule.objects.filter(author=user).order_by('-uploaded_at').first()
-        if not schedule:
-            return Response({"error": "No schedule uploaded"}, status=400)
+        schedule_id = request.data.get("schedule_id")
+        if schedule_id:
+            schedule_id = int(schedule_id)
+            try:
+                print("something wrong here")
+                schedule = Schedule.objects.get(id=schedule_id)
+            except Schedule.DoesNotExist:
+                return Response({"error": "Schedule not found"}, status=404)
+        else:
+            schedule = Schedule.objects.filter(author=user).order_by('-uploaded_at').first()
+            if not schedule:
+                return Response({"error": "No schedule uploaded"}, status=400)
+
 
         # Parse ICS → Python objects
         try:
@@ -67,6 +76,12 @@ class GenerateSchedule(APIView):
             student, created = Student.objects.get_or_create(user=request.user)
             extract_courses_from_events(student, events)
             extract_availability_from_events(student, events)
+
+            # update train line and schedule
+            student.train_line = train_line
+            student.station = station
+            student.schedule = schedule
+            student.save()
 
             # study groups testing
             ranked_matches_within_group(student)

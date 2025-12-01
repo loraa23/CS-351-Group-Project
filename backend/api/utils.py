@@ -342,14 +342,22 @@ def ranked_matches_within_group(target_student, threshold=30):
 
     matches.sort(key=lambda x: x[1], reverse=True)
 
-    # for debugging, delete later
-    print("=== Best matches in your study group ===")
-    matches_string = []
+    results = []
     for s, score in matches:
-        print(f"{s.user.username} — {score}%")
-        matches_string.append(f"{s.user.username} — {score}% match")
+        results.append({
+            "username": s.user.username,
+            "email": s.email,
+            "score": score,
+            "schedule_id": s.schedule.id if s.schedule else None,
+            "train_line": s.train_line,
+            "station": s.station
+        })
+    
+    # for s, score in matches:
+    #     print(f"{s.user.username} — {score}%")
+    #     matches_string.append(f"{s.user.username} — {score}% match")
 
-    return matches_string
+    return results
 
 
 

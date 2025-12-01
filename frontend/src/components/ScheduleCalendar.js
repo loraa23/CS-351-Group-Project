@@ -42,7 +42,7 @@ function ScheduleCalendar({ events }) {
         localizer={localizer}
         events={events}
         eventPropGetter={eventStyleGetter}
-        style={{ height: "100vh", width: "150vh", margin: "20px" }}
+        style={{ height: "100%", width: "100%"}}
         startAccessor="start"
         endAccessor="end"
         views={['week']}

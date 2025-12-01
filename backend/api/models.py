@@ -14,6 +14,10 @@ class Schedule(models.Model):
 
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    schedule = models.ForeignKey(Schedule, null=True, blank=True, on_delete=models.SET_NULL)
+    train_line = models.CharField(max_length=50, null=True, blank=True)
+    station = models.CharField(max_length=50, null=True, blank=True)
+    email = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):
         return self.user.username
