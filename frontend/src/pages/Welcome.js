@@ -47,13 +47,13 @@ function Welcome(){
                 </div>
                 <div className="review">
                     <div className="slides">
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" />
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg"/>
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" />
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg"/>
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg"/>
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg"/>
-                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg"/>
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" alt="UIC" />
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" alt="UIC"/>
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg"  alt="UIC"/>
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" alt="UIC"/>
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" alt="UIC"/>
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" alt="UIC"/>
+                        <img src="https://i.pinimg.com/1200x/53/4b/dd/534bddb03d2e8ab2f6c687f30b13ff2f.jpg" alt="UIC"/>
                     </div>
                 </div>
         </header>
