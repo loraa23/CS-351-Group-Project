@@ -32,7 +32,7 @@ function Welcome(){
                         </div>
                     </div>    
 
-                    <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a3908_mh_websize.jpg" width="550" height="400"/>  
+                    <img src="https://today.uic.edu/wp-content/uploads/2024/10/678a3908_mh_websize.jpg" width="550" height="400" alt="UIC"/>  
                 </div>
                 <div className="about">
                     <div>
