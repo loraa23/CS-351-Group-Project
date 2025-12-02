@@ -2,9 +2,9 @@
    font-family: 'Times New Roman', Times, serif;
    font-size: 2vw !important;
    /* border: 1px solid black; */
-   min-height: 7vh;
+   min-height: 5vh;
    font-weight: 300;
-    background: #ece2e2
+   background: #ece2e2
 }
 
 .calendar-container .rbc-time-view,
@@ -14,8 +14,8 @@
 .calendar-container .rbc-time-gutter,
 .calendar-container .rbc-time-header,
 .calendar-container .rbc-header {
-  border-radius: 5vh;
-  padding: 1vw;
+  /* border-radius: 2vh; */
+  /* padding: 1vw; */
   background-color: #f3f6ff !important;  /* your color */
 }
 
@@ -29,9 +29,8 @@
 
 
 .rbc-event {
-    border-radius: 8px !important;
+    border-radius: 4px !important;
     margin: auto;
-    
 }
 
 .commute-event {
@@ -51,36 +50,40 @@
   font-size: x-small;
 }
 
-.rbc-day-slot {
+/* .rbc-day-slot {
   pointer-events: none !important;
-}
+} */
 
 .calendar-container{
-    border-radius: 3vh;
+    /* border-radius: 3vh; */
     font-family: 'Urbanist';
     font-weight: 500;
     font-size: 1vw;
     min-width: 12vw;
-    width:90vw;
-    height: 100vh;
+    width: 95%;
+    height: 100%;
     background-color: #f3c1b8;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: auto;
+    /* margin: auto; */
     padding: 2vh;
 }
 
-.schedulePage{
+/* .schedulePage{
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     margin: auto;
     align-self: center;
-}
+    width: 500vh;
+    height: 500vh;
+} */
 
 #scheduleTitle{
     font-family: 'Lato';
+    font-size: 20px;
     font-weight: 700;
-    margin: 5vh;
+    margin: 0.5vh;
 }
 
 .Schedulemenu{
@@ -94,8 +97,8 @@
 .Schedulemenu ul{
    border-radius: 10px;
    list-style-type: none;
-   margin: 0;
-   padding: 0;
+   /* margin: 0; */
+   /* padding: 0; */
    overflow: hidden;
    background-color: brown;
 }

@@ -221,7 +221,6 @@ function Home() {
                 ))}
             </select>
           </div>
-
           <div className="stations">
             <p>Departure Stations: </p>
             <select value={station} onChange={handleStationChange}>
@@ -244,7 +243,7 @@ function Home() {
             station: station}}
         >
           <button id="generateSch" disabled={!selectedSchedule || !trainLine || !station}>
-            Generate Schedule
+            Generate
           </button>
         </Link>
       </nav>

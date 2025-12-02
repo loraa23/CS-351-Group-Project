@@ -239,10 +239,6 @@ select option{
     margin: 1vh;
 }
 
-.stations p{
-    font-family: 'Urbanist';
-    font-size: 1.5vw;
-}
 nav{
     /* border: 1px solid black; */
     padding: 1vh;
@@ -257,8 +253,8 @@ nav{
     border-radius: 1vh;
     background-color: brown;
     color: white;
-    width: 9.2vw;
-    height: 8vh;
+    width: 15vw;
+    height: 4vh;
     margin: 1vh;
     cursor: pointer;
 
@@ -303,51 +299,33 @@ nav{
     border: 2px dotted rgb(47, 47, 97);
 }
 
-.trainline{
-    /* max-width: fit-content; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    padding-right: 0;
-    /* border: 1px solid black; */
-}
-
-.stations{
-    max-width: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    padding-right: 0;
-}
-
-.trainline p{
-    font-family: 'Lato';
-}
-
-.stations p{
-    font-family: 'Lato';
-}
-
-.arrivalTrainStation{
-    max-width: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    padding-right: 0;
-}
-
+.trainline p,
+.stations p,
 .arrivalTrainStation p{
     font-family: 'Lato';
+    font-size: 1.6vw;
 }
 
 .transportOptions{
     /* background-color: aliceblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: auto;
-    padding: 0;
-    max-width: fit-content;
-    max-height: fit-content;
+    padding: 5px;
+    width: 100%;
+    /* max-width: fit-content;
+    max-height: fit-content; */
     /* border: 1px solid rgb(10, 10, 10); */
+}
+
+.trainline,
+.stations,
+.arrivalTrainStation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+    align-items: center;
+    width: 60%;                  
+    padding-right: 0;
 }

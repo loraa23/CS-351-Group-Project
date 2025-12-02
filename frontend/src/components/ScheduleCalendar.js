@@ -48,7 +48,7 @@ function ScheduleCalendar({ events }) {
         startAccessor="start"
         endAccessor="end"
         views={['week']}
-        // step={15}
+        // step={30}
         defaultView="week"
         toolbar={false} // hide navigation
         date={new Date(2025, 0, 6)} // fixed week start (dummy week)

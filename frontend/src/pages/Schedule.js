@@ -27,7 +27,7 @@ function Schedule() {
           title: ev.title,
           start: new Date(ev.display_start),
           end: new Date(ev.display_end),
-          // type: ev.type
+          type: ev.type
         }));
         setEvents(formatted);
 
@@ -41,18 +41,16 @@ function Schedule() {
   }, []);
 
   return (
-    <div className= "SchedulePage" style={{
-        // display: "flex",
-        // flexDirection:"column",
-        // justifyContent: "center", 
-        // alignItems: "center",     
-        // height: "110vh",
-        // width: "200vw",           
-        // boxSizing: "border-box",
-        // padding: "20px",
-        padding: "2rem"
+    <div style={{
+        display: "flex",
+        flexDirection:"column",
+        justifyContent: "center", 
+        alignItems: "center",     
+        height: "100vh",
+        width: "200vh",           
+        boxSizing: "border-box",
+        padding: "30px",
       }}>
-      
       <div className="Schedulemenu">
         <Link to="/Logout">
           <button id="back">Logout</button>
