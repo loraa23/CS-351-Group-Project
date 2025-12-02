@@ -4,7 +4,6 @@
    /* border: 1px solid black; */
    min-height: 5vh;
    font-weight: 300;
-   background: #ece2e2
 }
 
 .calendar-container .rbc-time-view,
@@ -16,7 +15,8 @@
 .calendar-container .rbc-header {
   /* border-radius: 2vh; */
   /* padding: 1vw; */
-  background-color: #f3f6ff !important;  /* your color */
+  /* background-color: #f3f6ff !important; */
+  background-color: white !important;
 }
 
 
@@ -49,10 +49,6 @@
   /* border-radius: 10px; */
   font-size: x-small;
 }
-
-/* .rbc-day-slot {
-  pointer-events: none !important;
-} */
 
 .calendar-container{
     /* border-radius: 3vh; */

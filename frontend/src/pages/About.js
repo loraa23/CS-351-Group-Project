@@ -43,15 +43,15 @@ function About(){
                      calendar by double-clicking the file or using an import function</h2>
                 <h1>How to get your .ics file?</h1>
                 <h2>1.Go to your my uic portal</h2>
-                <img src="../myuicportalHome.png" alt="uic portal Home page"/>
+                {/* <img src="../myuicportalHome.png" alt="uic portal Home page"/> */}
                 <h2>2.Go to your XE Registration</h2>
-                <img src="../myuicportalViewRegistration.png" alt="uic portal XE Registration"/>
+                {/* <img src="../myuicportalViewRegistration.png" alt="uic portal XE Registration"/> */}
                 <h2>3.Click on 'View registration information'</h2>
-                <img src="../myuicportalViewRegistration2.png" alt="uic portal view Registration"/>
+                {/* <img src="../myuicportalViewRegistration2.png" alt="uic portal view Registration"/> */}
                 <h2>4.In the 'Look up a schedule' tab, select your desired term</h2>
-                <img src="../myuicportalLookUp.png" alt="uic portal Look Up Tab"/>
+                {/* <img src="../myuicportalLookUp.png" alt="uic portal Look Up Tab"/> */}
                 <h2>5.Click on the calendar icon and save the file on your desktop (or desired folder)</h2>
-                <img src="../myuicportalScheduleIcon.png" alt="uic portal schedule Icon"/>
+                {/* <img src="../myuicportalScheduleIcon.png" alt="uic portal schedule Icon"/> */}
                 <h2>6.Upload this file on the Home page</h2>
             </div>
             <div className="matches-info">
